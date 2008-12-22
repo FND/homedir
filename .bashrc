@@ -108,3 +108,12 @@ PS1='${debian_chroot:+($debian_chroot)}\w$ '
 # custom aliases
 source ~/.alias
 
+# set date format to ISO 8601
+export LC_TIME=en_DK.utf8
+
+# set PATH to include TiddlyWiki utils
+PATH="${PATH}":~/Dev/TiddlyWiki/utils/
+
+# set environment variables
+export EDITOR="nano -w"
+
