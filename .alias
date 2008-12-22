@@ -1,0 +1,18 @@
+alias ins="sudo aptitude install"
+
+alias ll="ls -alh"
+alias dirf='find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"'
+
+alias cp="cp -i -v"
+alias mv="mv -i -v"
+
+alias run="xdg-open"
+alias nanow="nano -w"
+
+alias t="~/Scripts/todo.sh"
+alias tt="clear; ~/Scripts/todo.sh lsp"
+alias tw="~/Scripts/TiddlyWiki.sh"
+alias tweet="~/Scripts/Twitter.sh"
+alias vga=~/Scripts/VGAOut.sh
+
+complete -F _todo_sh -o default t
