@@ -1,0 +1,34 @@
+[user]
+	name = FND
+[alias]
+	ci = commit
+	cia = commit -a
+	cim = commit -m
+	ciam = commit -a -m
+	co = checkout
+	stat = status -uno
+	diffi = diff -M --color-words
+	diffw = diff -M -w
+	diffx = diff -M -w --color-words
+	merges = merge --squash
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow 
+	remote = green
+[color "diff"]
+	plain = white
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	header = white
+	added = yellow
+	changed = green
+	untracked = cyan
+[svn]
+	rmdir = true
