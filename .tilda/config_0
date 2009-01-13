@@ -50,4 +50,4 @@ hidden = true
 centered_horizontally = false
 centered_vertically = false
 enable_transparency = true
-double_buffer = false
+double_buffer = true
