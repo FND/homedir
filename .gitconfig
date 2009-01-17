@@ -32,3 +32,5 @@
 	untracked = cyan
 [svn]
 	rmdir = true
+[clean]
+	requireForce = true
