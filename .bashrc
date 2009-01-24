@@ -102,6 +102,10 @@ fi
 # FND
 #
 
+# set environment variables
+export EDITOR="vim"
+set -o vi
+
 # custom shell prompt
 PS1='${debian_chroot:+($debian_chroot)}\w$ '
 
@@ -113,7 +117,4 @@ export LC_TIME=en_DK.utf8
 
 # set PATH to include TiddlyWiki utils
 PATH="${PATH}":~/Dev/TiddlyWiki/utils/
-
-# set environment variables
-export EDITOR="nano -w"
 

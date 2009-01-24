@@ -1,6 +1,10 @@
+#set editing-mode vi
+#set keymap vi
+
 set completion-ignore-case Off
 #TAB:complete
 #TAB:menu-complete
+
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
 "\e[5C": forward-word
