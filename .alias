@@ -6,6 +6,7 @@ alias ins="sudo aptitude install"
 alias run="xdg-open"
 alias nanow="nano -w"
 alias clip="xclip -selection clipboard"
+alias say="espeak -v"
 
 alias t="~/Scripts/todo.sh"
 
@@ -14,5 +15,3 @@ alias tw="~/Scripts/TiddlyWiki.sh"
 alias tweet="~/Scripts/Twitter.sh"
 alias wtime="~/Scripts/worldTime.sh"
 alias vga="~/Scripts/VGAOut.sh"
-
-complete -F _todo_sh -o default t
