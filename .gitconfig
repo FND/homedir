@@ -10,8 +10,11 @@
 	diffi = diff -M --color-words
 	diffw = diff -M -w
 	diffx = diff -M -w --color-words
+	logd = log -p
 	logs = log --stat
 	merges = merge --squash
+	spull = svn rebase
+	spush = svn dcommit
 [color]
 	branch = auto
 	diff = auto
