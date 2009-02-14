@@ -115,6 +115,9 @@ source ~/.alias
 # set date format to ISO 8601
 export LC_TIME=en_DK.utf8
 
+# make history use timestamps
+export HISTTIMEFORMAT='%F %T '
+
 # set PATH to include TiddlyWiki utils
 PATH="${PATH}":~/Dev/TiddlyWiki/utils/
 
