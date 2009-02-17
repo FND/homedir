@@ -8,6 +8,7 @@ alias nanow="nano -w"
 alias clip="xclip -selection clipboard"
 alias say="espeak -v"
 
+alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
 alias t="~/Scripts/todo.sh"
 
 alias tt="clear; ~/Scripts/todo.sh lsp"
