@@ -14,6 +14,9 @@ syntax on
 set incsearch
 set autoindent
 
+" strip trailing whitespace -- TODO: restore cursor position
+autocmd BufWritePre,FileWritePre * %s/\s*$//g
+
 " HTML-specific settings
 autocmd FileType html set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
 autocmd FileType html set errorformat=%f:%l:%c:%m
