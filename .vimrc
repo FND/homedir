@@ -14,18 +14,16 @@ syntax on
 set incsearch
 set autoindent
 
+" word completion
+map! ^P ^[a. ^[hbmmi?\<^[2h"zdt.@z^Mywmx`mP xi
+map! ^N ^[a. ^[hbmmi/\<^[2h"zdt.@z^Mywmx`mP xi
+
 " strip trailing whitespace -- TODO: restore cursor position
 autocmd BufWritePre,FileWritePre * %s/\s*$//g
 
-" HTML-specific settings
-autocmd FileType html set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
-autocmd FileType html set errorformat=%f:%l:%c:%m
-autocmd FileType xhtml set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
-autocmd FileType xhtml set errorformat=%f:%l:%c:%m
-
-" JavaScript-specific settings
-autocmd FileType javascript set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
-autocmd FileType javascript set errorformat=%f:%l:%c:%m
+" (X)HTML- & JavaScript-specific settings
+autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
+autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m
 
 " Python-specific settings
 autocmd FileType python set makeprg=python\ ~/Scripts/pep8.py\ %
