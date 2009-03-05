@@ -14,10 +14,6 @@ syntax on
 set incsearch
 set autoindent
 
-" word completion
-map! ^P ^[a. ^[hbmmi?\<^[2h"zdt.@z^Mywmx`mP xi
-map! ^N ^[a. ^[hbmmi/\<^[2h"zdt.@z^Mywmx`mP xi
-
 " strip trailing whitespace -- TODO: restore cursor position
 autocmd BufWritePre,FileWritePre * %s/\s*$//g
 
