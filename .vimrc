@@ -14,8 +14,15 @@ syntax on
 set incsearch
 set autoindent
 
-" strip trailing whitespace -- TODO: restore cursor position
-autocmd BufWritePre,FileWritePre * %s/\s*$//g
+" strip trailing whitespace
+autocmd BufWritePre,FileWritePre * call TrimTrailingWhitespace()
+function! TrimTrailingWhitespace()
+	normal mz
+	normal Hmy
+	exec '%s/\s*$//g'
+	normal 'yz<cr>
+	normal `z
+endfunction
 
 " (X)HTML- & JavaScript-specific settings
 autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
