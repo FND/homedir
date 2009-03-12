@@ -31,3 +31,14 @@ autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m
 " Python-specific settings
 autocmd FileType python set makeprg=python\ ~/Scripts/pep8.py\ %
 autocmd FileType python set errorformat=%f:%l:%c:\ %m
+
+" custom commands
+
+command Clip call CopyToClipboard()
+function! CopyToClipboard()
+	normal mz
+	normal Hmy
+	normal ggVG"+y
+	normal 'yz<cr>
+	normal `z
+endfunction
