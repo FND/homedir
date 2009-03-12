@@ -107,7 +107,9 @@ export EDITOR="vim"
 set -o vi
 
 # custom shell prompt
-PS1='${debian_chroot:+($debian_chroot)}\w$ '
+#PS1='${debian_chroot:+($debian_chroot)}\w$ '
+PROMPT_COMMAND='DIR=`pwd | sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then CurDir=${DIR:0:5}…${DIR:${#DIR}-20}; else CurDir=$DIR; fi'
+PS1="\$CurDir\$ "
 
 # custom aliases
 source ~/.alias
