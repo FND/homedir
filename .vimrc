@@ -14,6 +14,9 @@ syntax on
 set incsearch
 set autoindent
 
+set tabstop=4
+set shiftwidth=4
+
 " strip trailing whitespace
 autocmd BufWritePre,FileWritePre * call TrimTrailingWhitespace()
 function! TrimTrailingWhitespace()
