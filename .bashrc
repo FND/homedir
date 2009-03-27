@@ -122,4 +122,3 @@ export HISTTIMEFORMAT='%F %T '
 
 # set PATH to include TiddlyWiki utils
 PATH="${PATH}":~/Dev/TiddlyWiki/utils/
-

@@ -25,4 +25,3 @@ user_pref("browser.zoom.siteSpecific", false);
 
 // enable print and scale options for print preview
 user_pref("print.whileInPrintPreview", true);
-
