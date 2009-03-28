@@ -7,11 +7,11 @@
 	ciam = commit -a -m
 	co = checkout
 	stat = status -uno
+	logs = log --stat
+	logd = log --stat -p
 	diffi = diff -M --color-words
 	diffw = diff -M -w
 	diffx = diff -M -w --color-words
-	logd = log -p
-	logs = log --stat
 	merges = merge --squash
 	spull = svn rebase
 	spush = svn dcommit
@@ -21,19 +21,19 @@
 	status = auto
 [color "branch"]
 	current = yellow reverse
-	local = yellow 
+	local = yellow
 	remote = green
+[color "status"]
+	header = white
+	added = yellow
+	changed = green
+	untracked = cyan
 [color "diff"]
 	plain = white
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
-[color "status"]
-	header = white
-	added = yellow
-	changed = green
-	untracked = cyan
 [svn]
 	rmdir = true
 [clean]
