@@ -27,6 +27,10 @@ function! TrimTrailingWhitespace()
 	normal `z
 endfunction
 
+" retrieve remote files' source (rather than rendered markup)
+" (cf. http://vimperator.org/trac/ticket/25)
+let g:netrw_http_cmd = "wget -q -O"
+
 " (X)HTML- & JavaScript-specific settings
 autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
 autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m
