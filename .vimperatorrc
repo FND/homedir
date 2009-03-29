@@ -1,0 +1,40 @@
+" 1.2 (created: 2008/08/16 18:51:52)
+
+" Mappings
+noremap gb gT
+
+" Options
+set guioptions=m
+set complete=sblh
+set wildoptions=auto
+
+" Abbreviations
+
+"source! ~/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+
+" display feed button in status bar (cf. http://vimperator.org/trac/ticket/17)
+javascript <<EOF
+(function(){
+	var feedPanel = document.createElement("statusbarpanel");
+	feedPanel.setAttribute("id", "feed-panel-clone");
+	feedPanel.appendChild(document.getElementById("feed-button"));
+	feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+	document.getElementById("status-bar").
+		insertBefore(feedPanel, document.getElementById("security-button"));
+})();
+EOF
+
+" enhance yanking behavior (cf. http://vimperator.org/trac/ticket/73)
+js <<EOF
+mappings.addUserMap([modes.NORMAL], ["Y"],
+	"Yank the currently selected text",
+	function() {
+		buffer.getCurrentWord();
+		events.feedkeys("<C-v>" + (/^Mac/.test(navigator.platform) ? "<M-c>" : "<C-c>"), true);
+		setTimeout(function() {
+			liberator.echo("Yanked " + util.readFromClipboard(), commandline.FORCE_SINGLELINE);
+		}, 20);
+	});
+EOF
