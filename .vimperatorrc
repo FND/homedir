@@ -5,7 +5,7 @@ noremap gb gT
 
 " Options
 set guioptions=m
-set complete=sblh
+set complete=sfl
 set wildoptions=auto
 
 " Abbreviations
