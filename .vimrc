@@ -17,14 +17,25 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 
-" strip trailing whitespace
-autocmd BufWritePre,FileWritePre * call TrimTrailingWhitespace()
-function! TrimTrailingWhitespace()
-	normal mz
-	normal Hmy
-	exec '%s/\s*$//g'
-	normal 'yz<cr>
-	normal `z
+" strip trailing whitespace and remove spaces before tabs
+" (cf. http://vim.wikia.com/wiki/Remove_unwanted_spaces)
+autocmd BufWritePre,FileWritePre * call TrimSpaces()
+
+function ShowSpaces(...)
+	let @/="\\v(\\s+$)|( +\\ze\\t)"
+	let oldhlsearch=&hlsearch
+	if !a:0
+		let &hlsearch=!&hlsearch
+	else
+		let &hlsearch=a:1
+	end
+	return oldhlsearch
+endfunction
+
+function TrimSpaces() range
+	let oldhlsearch=ShowSpaces(1)
+	execute a:firstline.",".a:lastline."substitute ///gec"
+	let &hlsearch=oldhlsearch
 endfunction
 
 " retrieve remote files' source (rather than rendered markup)
