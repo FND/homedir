@@ -9,6 +9,7 @@
 	stat = status -uno
 	logs = log --stat
 	logd = log --stat -p
+	logui = log --pretty=oneline --graph
 	diffi = diff -M --color-words
 	diffw = diff -M -w
 	diffx = diff -M -w --color-words
