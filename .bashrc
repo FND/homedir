@@ -120,5 +120,5 @@ export LC_TIME=en_DK.utf8
 # make history use timestamps
 export HISTTIMEFORMAT='%F %T '
 
-# set PATH to include TiddlyWiki utils
-PATH="${PATH}":~/Dev/TiddlyWiki/utils/
+# extend PATH to include scripts and TiddlyWiki utilities
+PATH="${PATH}:~/Scripts/:~/Dev/TiddlyWiki/utils/"
