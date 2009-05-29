@@ -18,7 +18,7 @@ set tabstop=4
 set shiftwidth=4
 
 " format status line
-set statusline=%F%m%r%h%w\ [%{&ff}]\ %{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}[%Y]%=[%02l,%02v]\ [%p%%]
+set statusline=%F%m%r%h%w\ %{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}[%{&ff}]\ [%Y]%=[%02l,%02v]\ [%p%%]
 set laststatus=2
 
 " strip trailing whitespace
