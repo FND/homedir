@@ -35,6 +35,9 @@ endfunction
 " (cf. http://vimperator.org/trac/ticket/25)
 let g:netrw_http_cmd = "wget -q -O"
 
+" mappings
+noremap gb gT
+
 " (X)HTML- & JavaScript-specific settings
 autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/JSLint/wrapper.py\ %
 autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m

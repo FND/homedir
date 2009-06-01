@@ -1,14 +1,14 @@
 " 1.2 (created: 2008/08/16 18:51:52)
 
-" Mappings
+" mappings
 noremap gb gT
 
-" Options
+" options
 set guioptions=m
 set complete=sfl
 set wildoptions=auto
 
-" Abbreviations
+" abbreviations
 
 "source! ~/.vimperatorrc.local
 
