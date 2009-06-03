@@ -17,9 +17,15 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 
+set directory=/tmp/
+
 " format status line
 set statusline=%F%m%r%h%w\ %{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}[%{&ff}]\ [%Y]%=[%02l,%02v]\ [%p%%]
 set laststatus=2
+
+" display whitespace characters
+set list
+set listchars=tab:»·,trail:·
 
 " strip trailing whitespace
 autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
