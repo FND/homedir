@@ -29,7 +29,7 @@ set statusline+=[%02l,%02v]\ [%p%%] " cursor position
 
 " display whitespace characters
 set list
-set listchars=tab:⋯⋯,trail:·
+set listchars=tab:⋯\ ,trail:·
 
 " strip trailing whitespace
 autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
