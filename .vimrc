@@ -66,3 +66,4 @@ endfunction
 " custom mappings
 noremap gb gT
 nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :TlistToggle<CR>
