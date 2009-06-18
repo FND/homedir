@@ -1,7 +1,7 @@
 ! use Windows key as modifier
-!xmodmap -e "remove mod4 = F13"
-keycode 115 = Super_L
-add mod4 = Super_L
+!remove mod4 = F13
+!keycode 115 = Super_L
+!add mod4 = Super_L
 
 ! disable Caps Lock
 remove Lock = Caps_Lock
