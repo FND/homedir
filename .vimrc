@@ -32,7 +32,7 @@ set list
 set listchars=tab:⋯\ ,trail:·
 
 " strip trailing whitespace
-autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
+"autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
 function! StripTrailingWhitespace()
 	normal mz
 	normal Hmy
@@ -67,3 +67,4 @@ endfunction
 noremap gb gT
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :TlistToggle<CR>
+nmap <F5> :call StripTrailingWhitespace()<CR>
