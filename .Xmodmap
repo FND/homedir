@@ -1,4 +1,4 @@
-! use Windows key as modifier
+! use Windows key as modifier -- XXX: disables END key!?
 !remove mod4 = F13
 !keycode 115 = Super_L
 !add mod4 = Super_L
