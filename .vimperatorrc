@@ -7,6 +7,8 @@ noremap gb gT
 set guioptions=m
 set complete=sfl
 set wildoptions=auto
+"set editor="xterm -e vim"
+set editor="gnome-terminal -x vim"
 
 " abbreviations
 
