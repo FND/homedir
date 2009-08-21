@@ -1,0 +1,4 @@
+urxvt.font: xft:Monospace:size=12
+urxvt.foreground: green
+urxvt.background: black
+urxvt.scrollBar_right: true
