@@ -121,4 +121,4 @@ export LC_TIME=en_DK.utf8
 export HISTTIMEFORMAT='%F %T '
 
 # extend PATH to include scripts and TiddlyWiki utilities
-PATH="${PATH}:~/Scripts/:~/Dev/TiddlyWiki/utils/"
+PATH="${PATH}:~/Scripts/todotxt/:~/Dev/TiddlyWiki/utils/"
