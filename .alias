@@ -5,7 +5,7 @@ alias ins="sudo aptitude install"
 
 alias run="xdg-open"
 alias nanow="nano -w"
-alias clip="xclip -selection clipboard"
+alias clip="xsel --clipboard"
 alias say="espeak -v"
 
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
