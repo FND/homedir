@@ -46,7 +46,7 @@ endfunction
 let g:netrw_http_cmd = "wget -q -O"
 
 " (X)HTML- & JavaScript-specific settings
-autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/JSLint/wrapper_rhino.py\ %
+autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/JSLint/wrapper_spidermonkey.py\ %
 autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m
 
 " Python-specific settings
