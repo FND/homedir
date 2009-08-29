@@ -68,3 +68,6 @@ noremap gb gT
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :TlistToggle<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
+
+" custom abbreviations
+iabbrev DBG XXX: DEBUG
