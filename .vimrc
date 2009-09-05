@@ -31,6 +31,9 @@ set statusline+=[%02l,%02v]\ [%p%%] " cursor position
 set list
 set listchars=tab:⋯\ ,trail:·
 
+" highlight long lines
+match ErrorMsg '\%>80v.\+'
+
 " strip trailing whitespace
 "autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
 function! StripTrailingWhitespace()
