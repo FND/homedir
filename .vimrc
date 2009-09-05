@@ -11,6 +11,9 @@ set number
 set hlsearch
 syntax on
 
+set spell spelllang=en_us
+autocmd FileType html,xhtml,javascript,python,sh set nospell
+
 set incsearch
 set autoindent
 
