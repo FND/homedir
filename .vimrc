@@ -22,6 +22,9 @@ set shiftwidth=4
 
 set directory=/tmp/
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " custom status line
 set laststatus=2
 set statusline=%f%m%r%h%w " file name and flags
@@ -54,10 +57,15 @@ let g:netrw_http_cmd = "wget -q -O"
 " (X)HTML- & JavaScript-specific settings
 autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/jslint-cli/wrapper_spidermonkey.py\ %
 autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Python-specific settings
 autocmd FileType python set makeprg=python\ ~/Scripts/pep8.py\ %
 autocmd FileType python set errorformat=%f:%l:%c:\ %m
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " custom commands
 command Clip call CopyToClipboard()
@@ -77,3 +85,6 @@ nmap <F5> :call StripTrailingWhitespace()<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
+
+" make SuperTab use omni-completion
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
