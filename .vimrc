@@ -68,6 +68,7 @@ autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " custom commands
+command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
 function! CopyToClipboard()
 	normal mz
