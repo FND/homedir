@@ -68,6 +68,11 @@ autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " custom commands
+command Fhtml set filetype=html
+command Fxml set filetype=xml
+command Fjs set filetype=javascript
+command Fpy set filetype=python
+command Fsh set filetype=sh
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
 function! CopyToClipboard()
