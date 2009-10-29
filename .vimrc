@@ -63,7 +63,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Python-specific settings
-autocmd FileType python set makeprg=python\ ~/Scripts/pep8.py\ %
+autocmd FileType python set makeprg=pep8\ %
 autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
