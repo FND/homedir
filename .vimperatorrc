@@ -8,9 +8,9 @@ set guioptions=m
 set showtabline=1
 set complete=sfl
 set wildoptions=auto
-"set editor="xterm -e vim"
+set editor="xterm -e vim"
 "set editor="gnome-terminal -x vim"
-set editor="urxvt -e vim"
+"set editor="urxvt -e vim"
 
 " abbreviations
 
