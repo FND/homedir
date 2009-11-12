@@ -3,6 +3,7 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias ins="sudo aptitude install"
 
+alias trash="mkdir -p /tmp/trash; mv -t /tmp/trash"
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
 alias run="xdg-open"
 alias clip="xsel --clipboard"
