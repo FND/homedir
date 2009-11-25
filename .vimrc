@@ -13,6 +13,7 @@ syntax on
 
 set spell spelllang=en_us
 autocmd FileType html,xhtml,javascript,python,sh set nospell
+autocmd FileType html source ~/.vim/scripts/sparkup.vim
 
 set incsearch
 set autoindent
