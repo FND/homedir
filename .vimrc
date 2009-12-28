@@ -43,11 +43,13 @@ match ErrorMsg '\%>80v.\+'
 " strip trailing whitespace
 "autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
 function! StripTrailingWhitespace()
-	normal mz
-	normal Hmy
-	exec '%s/\s*$//g'
-	normal 'yz<cr>
-	normal `z
+	if !&binary && &filetype != 'diff'
+		normal mz
+		normal Hmy
+		%s/\s\+$//e
+		normal 'yz<Enter>
+		normal `z
+	endif
 endfunction
 
 " retrieve remote files' source (rather than rendered markup)
