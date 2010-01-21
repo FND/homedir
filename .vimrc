@@ -75,6 +75,8 @@ command Fxml set filetype=xml
 command Fjs set filetype=javascript
 command Fpy set filetype=python
 command Fsh set filetype=sh
+command Lde set spelllang=de
+command Len set spelllang=en_us
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
 function! CopyToClipboard()
