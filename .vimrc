@@ -56,7 +56,14 @@ endfunction
 " (cf. http://vimperator.org/trac/ticket/25)
 let g:netrw_http_cmd = "wget -q -O"
 
-" (X)HTML- & JavaScript-specific settings
+" plain-text settings
+autocmd FileType plaintext set textwidth=80
+autocmd FileType plaintext set expandtab
+"autocmd FileType plaintext set formatoptions=toanl
+autocmd FileType plaintext set formatoptions=tnl
+set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
+
+" web-specific settings
 autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/jslint-cli/wrapper_spidermonkey.py\ %
 autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -70,6 +77,7 @@ autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " custom commands
+command Ftxt set filetype=plaintext
 command Fhtml set filetype=html
 command Fxml set filetype=xml
 command Fjs set filetype=javascript
