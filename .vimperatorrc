@@ -2,6 +2,7 @@
 
 " mappings
 noremap gb gT
+noremap gv <C-b>
 
 " options
 set guioptions=m
