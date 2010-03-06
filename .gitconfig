@@ -1,8 +1,8 @@
 [user]
 	name = FND
 [alias]
-	ci = commit
-	cia = commit -a
+	ci = commit -v
+	cia = commit -a -v
 	cim = commit -m
 	ciam = commit -a -m
 	co = checkout
