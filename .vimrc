@@ -42,15 +42,6 @@ match ErrorMsg '\%>80v.\+'
 
 " strip trailing whitespace
 "autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
-function! StripTrailingWhitespace()
-	if !&binary && &filetype != 'diff'
-		normal mz
-		normal Hmy
-		%s/\s\+$//e
-		normal 'yz<Enter>
-		normal `z
-	endif
-endfunction
 
 " retrieve remote files' source (rather than rendered markup)
 " (cf. http://vimperator.org/trac/ticket/25)
@@ -87,13 +78,7 @@ command Lde set spelllang=de
 command Len set spelllang=en_us
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
-function! CopyToClipboard()
-	normal mz
-	normal Hmy
-	normal ggVG"+y
-	normal 'yz<cr>
-	normal `z
-endfunction
+command TwitVim source ~/.vim/plugin/twitvim.vim.disabled
 
 " custom mappings
 noremap gb gT
@@ -106,3 +91,23 @@ iabbrev DBG XXX: DEBUG
 
 " make SuperTab use omni-completion
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+" custom functions
+
+function! StripTrailingWhitespace()
+	if !&binary && &filetype != 'diff'
+		normal mz
+		normal Hmy
+		%s/\s\+$//e
+		normal 'yz<Enter>
+		normal `z
+	endif
+endfunction
+
+function! CopyToClipboard()
+	normal mz
+	normal Hmy
+	normal ggVG"+y
+	normal 'yz<cr>
+	normal `z
+endfunction
