@@ -1,5 +1,13 @@
 [user]
 	name = FND
+[core]
+	pager = less -FRSX
+[pager]
+	status = true
+[svn]
+	rmdir = true
+[clean]
+	requireForce = true
 [alias]
 	ci = commit -v
 	cia = commit -a -v
@@ -35,7 +43,3 @@
 	frag = magenta bold
 	old = red bold
 	new = green bold
-[svn]
-	rmdir = true
-[clean]
-	requireForce = true
