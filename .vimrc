@@ -54,6 +54,11 @@ autocmd FileType plaintext set expandtab
 autocmd FileType plaintext set formatoptions=tnl
 set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
 
+" e-mail settings
+autocmd FileType mail set textwidth=72
+autocmd FileType mail set expandtab
+autocmd FileType mail match ErrorMsg '\%>72v.\+'
+
 " web-specific settings
 autocmd FileType html,xhtml,javascript set makeprg=python\ ~/Scripts/jslint-cli/wrapper_spidermonkey.py\ %
 autocmd FileType html,xhtml,javascript set errorformat=%f:%l:%c:%m
@@ -69,6 +74,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " custom commands
 command Ftxt set filetype=plaintext
+command Fm set filetype=mail
 command Fhtml set filetype=html
 command Fxml set filetype=xml
 command Fjs set filetype=javascript
@@ -78,7 +84,7 @@ command Lde set spelllang=de
 command Len set spelllang=en_us
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
-command TwitVim source ~/.vim/plugin/twitvim.vim.disabled
+command TwitVim source ~/.vim/plugin/twitvim.vim.disabled | match ErrorMsg '\%>140v.\+' | set wrap
 
 " custom mappings
 noremap gb gT
