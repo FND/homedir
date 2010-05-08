@@ -88,6 +88,7 @@ command TwitVim source ~/.vim/plugin/twitvim.vim.disabled | match ErrorMsg '\%>1
 
 " custom mappings
 noremap gb gT
+noremap W 1z=
 nmap zz :close<CR>
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :TlistToggle<CR>
