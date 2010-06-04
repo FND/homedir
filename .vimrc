@@ -52,6 +52,7 @@ autocmd FileType plaintext set textwidth=80
 autocmd FileType plaintext set expandtab
 "autocmd FileType plaintext set formatoptions=toanl
 autocmd FileType plaintext set formatoptions=tnl
+autocmd FileType plaintext match ErrorMsg '\%>80v.\+'
 set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
 
 " e-mail settings
@@ -96,6 +97,7 @@ nmap <F5> :call StripTrailingWhitespace()<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
+iabbrev JSX try {} catch(exc) { console.log("error", exc); }
 
 " make SuperTab use omni-completion
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
