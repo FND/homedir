@@ -17,7 +17,7 @@
 	stat = status -uno
 	logs = log --stat
 	logd = log --stat -p
-	logui = log --pretty=oneline --graph
+	logui = log --all --graph --decorate --pretty=oneline --abbrev-commit
 	diffi = diff -M --color-words
 	diffw = diff -M -w
 	diffx = diff -M -w --color-words
