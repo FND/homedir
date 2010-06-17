@@ -85,7 +85,9 @@ command Lde set spelllang=de
 command Len set spelllang=en_us
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
-command TwitVim source ~/.vim/plugin/twitvim.vim.disabled | match ErrorMsg '\%>140v.\+' | set wrap
+command TwitVim let twitvim_enable_python = 1 |
+	\source ~/.vim/plugin/twitvim.vim.disabled |
+	\match ErrorMsg '\%>140v.\+' | set wrap
 
 " custom mappings
 noremap gb gT
