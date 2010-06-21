@@ -17,7 +17,7 @@
 	stat = status -uno
 	logs = log --stat
 	logd = log --stat -p
-	logui = log --all --graph --decorate --pretty=oneline --abbrev-commit
+	logui = log --all --graph --decorate --pretty='format:%C(yellow)%h%d %Cblue[%an]%Creset %s'
 	diffi = diff -M --color-words
 	diffw = diff -M -w
 	diffx = diff -M -w --color-words
