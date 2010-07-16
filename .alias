@@ -4,6 +4,7 @@ alias mv="mv -i"
 alias less="less -R"
 alias cgrep="grep --color=always"
 
+alias set_title='printf "\033]2;%s\007"'
 alias run="xdg-open"
 alias ins="sudo aptitude install"
 alias clip="xsel --clipboard"
