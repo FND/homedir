@@ -99,7 +99,7 @@ nmap <F5> :call StripTrailingWhitespace()<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
-iabbrev JSX try {} catch(exc) { console.log("error", exc); }
+iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }
 
 " make SuperTab use omni-completion
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
