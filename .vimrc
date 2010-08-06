@@ -93,16 +93,11 @@ command TwitVim let twitvim_enable_python = 1 |
 noremap gb gT
 noremap W 1z=
 nmap zz :close<CR>
-nmap <F2> :NERDTreeToggle<CR>
-nmap <F3> :TlistToggle<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
 iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }
-
-" make SuperTab use omni-completion
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " custom functions
 
