@@ -4,5 +4,9 @@
 !add mod4 = Super_L
 
 ! disable Caps Lock
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
+clear lock
+keycode 66 = Escape
+
+! swap Fn and CTRL -- XXX: does not work
+!keycode 151 = Control_L
+!keycode 37 = Fn
