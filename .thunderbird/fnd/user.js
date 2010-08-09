@@ -5,15 +5,18 @@ user_pref("mailnews.reply_header_ondate", "Date: %s");
 user_pref("mailnews.reply_header_separator", "\n");
 user_pref("mailnews.reply_header_colon", "");
 
+// disable flowed format
+user_pref("mailnews.send_plaintext_flowed", false);
+user_pref("mailnews.display.disable_format_flowed_support", true);
+
 // display time of new mail notification
 //user_pref("alerts.totalOpenTime", 4000);
 
 // deactivate quote bar
-//ser_pref("mailnews.display.disable_format_flowed_support", true);
-//ser_pref("mail.quoted_graphical", false);
+//user_pref("mail.quoted_graphical", false);
 
 // sorting threads
-//ser_pref("mailnews.thread_pane_column_unthreads", false);
+//user_pref("mailnews.thread_pane_column_unthreads", false);
 
 // purge download manager
 user_pref("browser.download.manager.retention", 0);
