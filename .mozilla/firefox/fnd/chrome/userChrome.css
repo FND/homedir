@@ -53,12 +53,12 @@ tab[selected="true"] {
 }
 
 /* collapse bookmarks toolbar by default; expand on hover */
-#PersonalToolbar {
+/*#PersonalToolbar {
 	display: none;
 }
 #navigator-toolbox:hover > #PersonalToolbar {
 	display: -moz-box;
-}
+}*/
 
 /* remove text from bookmarks toolbar*/
 #bookmarksBarContent toolbarbutton:not([container="true"]) label {
