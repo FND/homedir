@@ -21,6 +21,9 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# ensure keyboard mappings are processed
+xmodmap ~/.Xmodmap
+
 # create temporary directories
 mkdir -p /tmp/trash
 mkdir -p /tmp/dev
