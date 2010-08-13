@@ -1,12 +1,3 @@
-! use Windows key as modifier -- XXX: disables END key!?
-!remove mod4 = F13
-!keycode 115 = Super_L
-!add mod4 = Super_L
-
 ! disable Caps Lock
-clear lock
-keycode 66 = Escape
-
-! swap Fn and CTRL -- XXX: does not work
-!keycode 151 = Control_L
-!keycode 37 = Fn
+clear Lock
+keysym Caps_Lock = Escape
