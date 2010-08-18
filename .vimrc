@@ -76,6 +76,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " custom commands
 command Ftxt set filetype=plaintext
 command Fm set filetype=mail
+command Fmkd set filetype=mkd
 command Fhtml set filetype=html
 command Fxml set filetype=xml
 command Fjs set filetype=javascript
