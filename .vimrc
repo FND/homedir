@@ -84,6 +84,7 @@ command Fpy set filetype=python
 command Fsh set filetype=sh
 command Lde set spelllang=de
 command Len set spelllang=en_us
+command Qnoise set nospell wrap | match
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
 command TwitVim let twitvim_enable_python = 1 |

@@ -49,5 +49,5 @@ animation = false
 hidden = true
 centered_horizontally = false
 centered_vertically = false
-enable_transparency = true
+enable_transparency = false
 double_buffer = true
