@@ -64,8 +64,10 @@ autocmd FileType mail match ErrorMsg '\%>72v.\+'
 autocmd FileType html,xhtml,css,javascript set makeprg=jslint-cli\ %
 autocmd FileType html,xhtml,css,javascript set errorformat=%f:%l:%c:%m
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html syn keyword htmlTagName contained section header footer nav aside hgroup article figure
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType css syn keyword cssTagName section header footer nav aside hgroup article figure
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " Python-specific settings
