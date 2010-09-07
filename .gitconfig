@@ -14,6 +14,7 @@
 	cia = commit -a -v
 	cim = commit -m
 	ciam = commit -a -m
+	amend = commit -v --amend
 	co = checkout
 	stat = status -uno
 	logs = log --stat
