@@ -69,6 +69,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType css syn keyword cssTagName section header footer nav aside hgroup article figure
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }
+autocmd FileType javascript iabbrev fn function() {<CR>}
 
 " Python-specific settings
 autocmd FileType python set makeprg=pep8\ %
@@ -101,7 +103,6 @@ nmap <F5> :call StripTrailingWhitespace()<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
-iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }
 
 " custom functions
 
