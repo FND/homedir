@@ -1,17 +1,17 @@
 # Example keymap file
-# To define your own keys for MOC commands, create a keymap file in ~/.moc/
-# directory and add an options Keymap = FILE in ~/.moc/config
+# To define your own keys for MOC commands, create a keymap file in the ~/.moc/
+# directory and add options Keymap = FILE in ~/.moc/config
 #
 # The format of this file is:
 # Lines beginning with # are comments.
 # Blank lines are ignored.
 # Every other line is expected to be in format:
 #
-# COMMAND = KEY [KEY ...]
+# COMMAND = [KEY ...]
 #
 # The key can be:
 #  - just a char, like i, L, ", *
-#  - CRTL-KEY sequence: ^k (CTRL-k), ^4
+#  - CTRL-KEY sequence: ^k (CTRL-k), ^4
 #  - ALT-KEY (meta sequence): M-j (ALT-j), M-%
 #  - Special keys:
 #    DOWN
@@ -33,6 +33,8 @@
 #    F1 - F12
 #
 # Maximum number of keys for one command is 5.
+#
+# Omitting the key for a command will disassociate the key from the command.
 #
 # Default key configuration for MOC (and a list of all available commands):
 
@@ -93,11 +95,13 @@ volume_60 =		M-6
 volume_70 =		M-7
 volume_80 =		M-8
 volume_90 =		M-9
+mark_start =		'
+mark_end =		"
 
-# Key binding for directories: defaults are Shift-number
+# Key bindings for directories: defaults are Shift-number
 # shift 1 = ! = Fastdir1
 go_to_fast_dir1 =	!
-go_to_fast_dir2 =	"
+go_to_fast_dir2 =	@
 go_to_fast_dir3 =	#
 go_to_fast_dir4 =	$
 go_to_fast_dir5 =	%
@@ -109,11 +113,23 @@ go_to_fast_dir10 =	)
 
 plist_add_stream =	^u
 toggle_mixer =		x
+# for softmixer
+#toggle_softmixer =	w
 history_up =		UP
 history_down =		DOWN
 plist_move_up =		u
 plist_move_down =	j
 theme_menu =		T
+
+toggle_equalizer =	E
+equalizer_refresh =	e
+equalizer_prev =	K
+equalizer_next =	k
+toggle_make_mono =	J
+show_lyrics =		L
+playlist_full_paths =	P
+enqueue_file =		z
+clear_queue =		Z
 
 exec_command1 = 	F1
 exec_command2 = 	F2
