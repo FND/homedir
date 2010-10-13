@@ -98,6 +98,8 @@ command TwitVim let twitvim_enable_python = 1 |
 " custom mappings
 noremap gb gT
 noremap W 1z=
+noremap <c-Y> "+y
+noremap <c-P> "+p
 nmap zz :close<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
 
