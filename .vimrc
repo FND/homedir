@@ -2,6 +2,7 @@ set nocompatible " use Vim rather than Vi settings
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
+set confirm
 set nobackup
 
 set nowrap
@@ -16,6 +17,8 @@ autocmd FileType html,xhtml,javascript,python,sh set nospell
 
 set incsearch
 set autoindent
+set scrolloff=3
+set wildmode=list:longest,full
 
 set tabstop=4
 set shiftwidth=4
