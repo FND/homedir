@@ -94,9 +94,17 @@ command Len set spelllang=en_us
 command Qnoise set nospell wrap | match
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
-command TwitVim let twitvim_enable_python = 1 |
-	\source ~/.vim/plugin/twitvim.vim.disabled |
-	\match ErrorMsg '\%>140v.\+' | set wrap
+
+" on-demand plugins
+
+function! LoadPlugin(name)
+	let l:pluginpath = globpath(&rtp, "dplugins/" . a:name . ".vim")
+	exec "source " . l:pluginpath
+endfunction
+
+command TwitVim let twitvim_enable_python = 1 | match ErrorMsg '\%>140v.\+' |
+	set wrap | call LoadPlugin("twitvim")
+command Room call LoadPlugin("vimroom")
 
 " custom mappings
 noremap gb gT
