@@ -103,7 +103,7 @@ function! LoadPlugin(name)
 endfunction
 
 command TwitVim let twitvim_enable_python = 1 | match ErrorMsg '\%>140v.\+' |
-	set wrap | call LoadPlugin("twitvim")
+	\set wrap | call LoadPlugin("twitvim")
 command Room call LoadPlugin("vimroom")
 
 " custom mappings
