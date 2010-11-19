@@ -107,12 +107,14 @@ command TwitVim let twitvim_enable_python = 1 | match ErrorMsg '\%>140v.\+' |
 command Room call LoadPlugin("vimroom") | VimroomToggle
 
 " custom mappings
+let mapleader = ","
 noremap gb gT
 noremap W 1z=
 noremap <c-Y> "+y
 noremap <c-P> "+p
 nmap zz :close<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
+nmap <Leader>s :nohlsearch<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
