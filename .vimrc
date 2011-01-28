@@ -115,6 +115,7 @@ noremap <c-P> "+p
 nmap zz :close<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
 nmap <Leader>s :nohlsearch<CR>
+nmap <Leader>l :Lint<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
