@@ -129,5 +129,5 @@ export HISTTIMEFORMAT="%F %T "
 
 # MotD on first terminal (usually persistent, e.g. Tilda)
 if [ `tty` = "/dev/pts/0" ]; then
-	todo.sh listpri a
+	todo.sh listpri
 fi
