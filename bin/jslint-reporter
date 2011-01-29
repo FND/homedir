@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+node $HOME/Dev/jslint-reporter/wrapper.js $@ | \
+	grep -v "Expected exactly one space between '\(function\|if\)' and '('"

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+set -x
+
+git --git-dir=$HOME/.git_confidential "$@"
