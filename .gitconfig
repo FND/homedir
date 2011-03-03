@@ -45,3 +45,5 @@
 	frag = magenta bold
 	old = red bold
 	new = green bold
+[log]
+	date = iso
