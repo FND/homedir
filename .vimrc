@@ -80,6 +80,10 @@ autocmd FileType python set makeprg=pep8\ %
 autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
+" Ruby-specific settings
+autocmd FileType ruby,eruby set expandtab
+autocmd FileType ruby,eruby set tabstop=2
+
 " custom commands
 command Ftxt set filetype=plaintext
 command Fm set filetype=mail
