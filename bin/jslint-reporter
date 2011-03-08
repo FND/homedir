@@ -1,4 +1,12 @@
 #!/usr/bin/env sh
 
-node $HOME/Dev/jslint-reporter/wrapper.js $@ | \
-	grep -v "Expected exactly one space between '\(function\|if\)' and '('"
+err=`node $HOME/Dev/jslint-reporter/wrapper.js --goodparts --onevar=false $@ | \
+	grep -v "Expected exactly one space between '\(function\|if\)' and '('." | \
+	grep -v "Missing space between 'for' and '('."`
+
+if [ -z "$err" ]; then
+	exit 0
+else
+	echo "$err"
+	exit 1
+fi
