@@ -79,6 +79,8 @@ autocmd FileType javascript iabbrev fn function() {<CR>}
 autocmd FileType python set makeprg=pep8\ %
 autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set expandtab
+autocmd FileType python set tabstop=4
 
 " Ruby-specific settings
 autocmd FileType ruby,eruby set expandtab
