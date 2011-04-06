@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+# simple plain-text notes manager
+#
+# Usage:
+#   $ n [ls|<title>]
+
+set -e
+
+directory="$HOME/notes"
+
+if [ "$1" = "ls" ]; then
+	ls -1 $directory | tail
+	exit 0
+fi
+
+name=`date +%F`
+if [ -n "$1" ]; then
+	title=`echo "$@" | sed -e "s/ /_/g"`
+	name="${name}_${title}"
+fi
+
+$EDITOR "$directory/$name.txt"
