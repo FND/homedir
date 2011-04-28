@@ -10,7 +10,7 @@ set -e
 directory="$HOME/notes"
 
 if [ "$1" = "ls" ]; then
-	ls -1 $directory | tail
+	ls -1 $directory | tail | sed -e "s/\.txt$//"
 	exit 0
 fi
 
@@ -20,4 +20,6 @@ if [ -n "$1" ]; then
 	name="${name}_${title}"
 fi
 
-$EDITOR "$directory/$name.txt"
+filepath="$directory/$name.txt"
+{ echo; echo; date +%R; } >> "$filepath"
+$EDITOR "$filepath"
