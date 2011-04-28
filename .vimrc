@@ -20,6 +20,7 @@ set autoindent
 set scrolloff=3
 set wildmode=list:longest,full
 
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
 
@@ -64,7 +65,7 @@ autocmd FileType mail set expandtab
 autocmd FileType mail match ErrorMsg '\%>72v.\+'
 
 " web-specific settings
-autocmd FileType html,xhtml,css,javascript set makeprg=jslint-reporter\ --goodparts\ %
+autocmd FileType html,xhtml,css,javascript set makeprg=jslint-reporter\ %
 autocmd FileType html,xhtml,css,javascript set errorformat=%f:%l:%c:%m
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html syn keyword htmlTagName contained section header footer nav aside hgroup article figure
@@ -72,8 +73,10 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType css syn keyword cssTagName section header footer nav aside hgroup article figure
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType javascript iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }
+autocmd FileType javascript set noexpandtab
+autocmd FileType javascript set tabstop=4
 autocmd FileType javascript iabbrev fn function() {<CR>}
+autocmd FileType javascript iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }
 
 " Python-specific settings
 autocmd FileType python set makeprg=pep8\ %
@@ -124,6 +127,7 @@ nmap zz :close<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
 nmap <Leader>s :nohlsearch<CR>
 nmap <Leader>l :Lint<CR>
+nmap <leader>e :NERDTreeToggle<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
