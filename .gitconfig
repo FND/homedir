@@ -26,6 +26,7 @@
 	merges = merge --squash
 	spull = svn rebase
 	spush = svn dcommit
+	fshow = ! sh -c 'git show --pretty="format:" --name-only $1 | grep -v "^$" | uniq | sed -e "s#^#`git rev-parse --show-toplevel`/#"' -
 [color]
 	branch = auto
 	diff = auto
