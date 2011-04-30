@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+converter="$HOME/Scripts/Markdown.pl"
+
+filepath="$1"
+tmpfile="/tmp/markdown_$$.html"
+
+if [ -n "$filepath" ]; then
+	$converter "$filepath" > $tmpfile
+else
+	cat | $converter > $tmpfile
+fi
+
+w3m -no-cookie -dump $tmpfile
+
+rm $tmpfile
