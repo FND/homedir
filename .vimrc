@@ -59,6 +59,9 @@ autocmd FileType plaintext set formatoptions=tnl
 autocmd FileType plaintext match ErrorMsg '\%>80v.\+'
 set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
 
+" Markdown settings
+autocmd FileType mkd set makeprg=markdown\ %
+
 " e-mail settings
 autocmd FileType mail set textwidth=72
 autocmd FileType mail set expandtab
