@@ -113,8 +113,8 @@ PROMPT_COMMAND='DIR=`pwd | sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 30 ]; then Cur
 #PS1="\$CurDir\$ "
 # display current Git branch
 parse_git_branch() {
-	BRANCH=$(git branch 2> /dev/null | grep "^\* [^(]" | cut -c 3-)
-	[ $BRANCH ] && echo "[$BRANCH]"
+	local branch=$(git branch 2> /dev/null | grep "^\* [^(]" | cut -c 3-)
+	[ $branch ] && echo "[$branch]"
 }
 PS1="\$CurDir\$(parse_git_branch)\$ "
 
