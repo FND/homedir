@@ -3,15 +3,19 @@
 # simple plain-text notes manager
 #
 # Usage:
-#   $ n [ls|<title>]
+#   $ n [ls|v|<title>]
 
 set -e
 
 directory="$HOME/notes"
+append_time=true
 
 if [ "$1" = "ls" ]; then
 	ls -1 $directory | tail | sed -e "s/\.txt$//"
 	exit 0
+elif [ "$1" = "v" ]; then
+	append_time=false
+	shift
 fi
 
 name=`date +%F`
@@ -19,7 +23,10 @@ if [ -n "$1" ]; then
 	title=`echo "$@" | sed -e "s/ /_/g"`
 	name="${name}_${title}"
 fi
-
 filepath="$directory/$name.txt"
-{ echo; echo; date +%R; } >> "$filepath"
+
+if [ $append_time = true ]; then
+	{ echo; echo; date +%R; } >> "$filepath"
+fi
+
 $EDITOR "$filepath"
