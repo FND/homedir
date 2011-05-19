@@ -3,7 +3,7 @@
 # simple plain-text notes manager
 #
 # Usage:
-#   $ n [ls|v|<title>]
+#   $ n [ls|-v|<title>]
 
 set -e
 
@@ -13,7 +13,7 @@ append_time=true
 if [ "$1" = "ls" ]; then
 	ls -1 $directory | tail | sed -e "s/\.txt$//"
 	exit 0
-elif [ "$1" = "v" ]; then
+elif [ "$1" = "-v" ]; then
 	append_time=false
 	shift
 fi
