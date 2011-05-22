@@ -5,10 +5,7 @@ noremap gb gT
 noremap gv <C-b>
 
 " options
-set guioptions=m
-set showtabline=1
 set complete=sfl
-set wildoptions=auto
 set editor="xterm -e vim"
 "set editor="gnome-terminal -x vim"
 "set editor="urxvt -e vim"
@@ -19,17 +16,17 @@ set editor="xterm -e vim"
 
 " vim: set ft=vimperator:
 
-" display feed button in status bar (cf. http://vimperator.org/trac/ticket/17)
-javascript <<EOF
-(function(){
-	var feedPanel = document.createElement("statusbarpanel");
-	feedPanel.setAttribute("id", "feed-panel-clone");
-	feedPanel.appendChild(document.getElementById("feed-button"));
-	feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
-	document.getElementById("status-bar").
-		insertBefore(feedPanel, document.getElementById("security-button"));
-})();
-EOF
+" display feed button in status bar (cf. http://vimperator.org/trac/ticket/17) -- XXX: incompatible with Firefox 4!?
+"javascript <<EOF
+"(function(){
+"	var feedPanel = document.createElement("statusbarpanel");
+"	feedPanel.setAttribute("id", "feed-panel-clone");
+"	feedPanel.appendChild(document.getElementById("feed-button"));
+"	feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+"	document.getElementById("status-bar").
+"		insertBefore(feedPanel, document.getElementById("security-button"));
+"})();
+"EOF
 
 " enhance yanking behavior (cf. http://vimperator.org/trac/ticket/73)
 js <<EOF
