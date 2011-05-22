@@ -53,17 +53,22 @@ tab[selected="true"] {
 }
 
 /* collapse bookmarks toolbar by default; expand on hover */
-/*#PersonalToolbar {
-	display: none;
+/* adapted from http://userstyles.org/styles/41338/firefox-4-autohide-bookmarks-toolbar-timed-delayed */
+#PersonalToolbar {
+	visibility: collapse !important;
+	opacity: 0.1;
+	-moz-transition: visibility 1s, opacity 1s ease !important;
 }
 #navigator-toolbox:hover > #PersonalToolbar {
-	display: -moz-box;
-}*/
+	visibility: visible !important;
+	opacity: 1;
+	-moz-transition: visibility !important;
+}
 
 /* remove text from bookmarks toolbar*/
-#bookmarksBarContent toolbarbutton:not([container="true"]) label {
+/*#bookmarksBarContent toolbarbutton:not([container="true"]) label {
 	display: none !important;
-}
+}*/
 
 /* show text on bookmark toolbar on mouseover */
 /*#bookmarksBarContent toolbarbutton:not([container="true"]):hover label {
