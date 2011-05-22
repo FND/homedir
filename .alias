@@ -6,7 +6,7 @@ alias cgrep="grep --color=always"
 
 alias set_title='printf "\033]2;%s\007"'
 alias run="xdg-open"
-alias ins="sudo aptitude install"
+alias ins="sudo apt-get install"
 alias clip="xsel --clipboard"
 alias say="espeak -v"
 alias gitsend="make test && git push"
