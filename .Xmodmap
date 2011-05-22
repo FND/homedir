@@ -1,3 +1,4 @@
 ! disable Caps Lock
 clear Lock
-keysym Caps_Lock = Escape
+keycode 66 = Escape
+!keysym Caps_Lock = Escape
