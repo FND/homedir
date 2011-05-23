@@ -24,3 +24,6 @@ fi
 # create temporary directories
 mkdir -p /tmp/trash
 mkdir -p /tmp/dev
+
+# load Ruby Version Manager
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
