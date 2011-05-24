@@ -10,6 +10,7 @@ alias ins="sudo apt-get install"
 alias clip="xsel --clipboard"
 alias say="espeak -v"
 alias gitsend="make test && git push"
+alias rvm_activate="source $HOME/.rvm/scripts/rvm"
 
 alias trash="mv -t /tmp/trash"
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
