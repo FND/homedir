@@ -62,7 +62,7 @@ tab[selected="true"] {
 #navigator-toolbox:hover > #PersonalToolbar {
 	visibility: visible !important;
 	opacity: 1;
-	-moz-transition: visibility !important;
+	-moz-transition: visibility 1s, opacity 1s ease !important;
 }
 
 /* remove text from bookmarks toolbar*/
