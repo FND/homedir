@@ -10,12 +10,14 @@
 [clean]
 	requireForce = true
 [alias]
+	patch = add --patch
 	ci = commit -v
 	cia = commit -a -v
 	cim = commit -m
 	ciam = commit -a -m
 	amend = commit -v --amend
 	co = checkout
+	s = status
 	stat = status -uno
 	logs = log --stat
 	logd = log --stat -p
@@ -23,6 +25,7 @@
 	diffi = diff -M --color-words
 	diffw = diff -M -w
 	diffx = diff -M -w --color-words
+	diffc = diff --cached
 	merges = merge --squash
 	spull = svn rebase
 	spush = svn dcommit
@@ -31,6 +34,7 @@
 	branch = auto
 	diff = auto
 	status = auto
+	interactive = auto
 [color "branch"]
 	current = yellow reverse
 	local = yellow
