@@ -68,6 +68,7 @@ autocmd FileType mail set expandtab
 autocmd FileType mail match ErrorMsg '\%>72v.\+'
 
 " web-specific settings
+autocmd BufRead,BufNewFile *.json set filetype=javascript
 autocmd FileType html,xhtml,css,javascript set makeprg=jslint-reporter\ %
 autocmd FileType html,xhtml,css,javascript set errorformat=%f:%l:%c:%m
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags

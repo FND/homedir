@@ -2,7 +2,7 @@
 
 err=`node $HOME/Dev/jslint-reporter/wrapper.js \
 	--goodparts --onevar=false --maxerr=999 $@ | \
-	grep -v "Expected exactly one space between '\(function\|if\|switch\|catch\)' and '('." | \
+	grep -v "Expected exactly one space between '\(function\|if\|while\|switch\|catch\)' and '('." | \
 	grep -v "Missing space between 'for' and '('."`
 
 if [ -z "$err" ]; then
