@@ -10,6 +10,7 @@
 [clean]
 	requireForce = true
 [alias]
+	update = "!git fetch; git pull"
 	patch = add --patch
 	ci = commit -v
 	cia = commit -a -v
