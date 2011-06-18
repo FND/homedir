@@ -133,5 +133,6 @@ export HISTTIMEFORMAT="%F %T "
 
 # MotD on first terminal (usually persistent, e.g. Tilda)
 if [ `tty` = "/dev/pts/0" ]; then
+	$HOME/Scripts/keyboard_mapping.sh # XXX: fugly hack to work around Ubuntu refusing to load ~/.Xmodmap
 	todo.sh listpri
 fi
