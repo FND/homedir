@@ -102,8 +102,8 @@ command Fxml set filetype=xml
 command Fjs set filetype=javascript
 command Fpy set filetype=python
 command Fsh set filetype=sh
-command Len set spelllang=en_us
-command Lde set spelllang=de |
+command Len set spell | set spelllang=en_us
+command Lde set spell | set spelllang=de |
 	\iabbrev ae ä| iabbrev oe ö| iabbrev ue ü|
 	\iabbrev sz ß
 command Qnoise set nospell wrap | match

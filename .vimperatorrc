@@ -5,6 +5,7 @@ noremap gb gT
 noremap gv <C-b>
 
 " options
+set hlsearch
 set complete=sfl
 set editor="xterm -e vim"
 "set editor="gnome-terminal -x vim"
