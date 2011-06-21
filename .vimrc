@@ -109,6 +109,8 @@ command Lde set spell | set spelllang=de |
 command Qnoise set nospell wrap | match
 command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
+command -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
+command -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
 
 " on-demand plugins
 
@@ -131,7 +133,8 @@ nmap zz :close<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
 nmap <Leader>s :nohlsearch<CR>
 nmap <Leader>l :Lint<CR>
-nmap <leader>e :NERDTreeToggle<CR>
+nmap <Leader>e :NERDTreeToggle<CR>
+nmap <Leader>q :Qnoise<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
