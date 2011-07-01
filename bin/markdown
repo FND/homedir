@@ -5,10 +5,12 @@ converter="$HOME/Scripts/Markdown.pl"
 filepath="$1"
 tmpfile="/tmp/markdown_$$.html"
 
+echo '<meta charset="utf-8">' > $tmpfile
+
 if [ -n "$filepath" ]; then
-	$converter "$filepath" > $tmpfile
+	$converter "$filepath" >> $tmpfile
 else
-	cat | $converter > $tmpfile
+	cat | $converter >> $tmpfile
 fi
 
 w3m -no-cookie -dump $tmpfile
