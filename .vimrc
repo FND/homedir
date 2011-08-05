@@ -101,6 +101,7 @@ command Fhtml set filetype=html
 command Fxml set filetype=xml
 command Fjs set filetype=javascript
 command Fpy set filetype=python
+command Frb set filetype=ruby
 command Fsh set filetype=sh
 command Len set spell | set spelllang=en_us
 command Lde set spell | set spelllang=de |
@@ -121,7 +122,8 @@ endfunction
 
 command TwitVim let twitvim_enable_python = 1 | match ErrorMsg '\%>140v.\+' |
 	\set wrap | call LoadPlugin("twitvim")
-command Room call LoadPlugin("vimroom") | VimroomToggle
+command DrawIt call LoadPlugin("cecutil") | call LoadPlugin("DrawItPlugin") |
+	\call LoadPlugin("autoload/DrawIt")
 
 " custom mappings
 let mapleader = ","
