@@ -9,7 +9,7 @@ alias run="xdg-open"
 alias ins="sudo apt-get install"
 alias clip="xsel --clipboard"
 alias say="espeak -v"
-alias rvm_activate="source $HOME/.rvm/scripts/rvm"
+alias rvm_activate="alias be='bundle exec'; source $HOME/.rvm/scripts/rvm"
 
 alias trash="mv -t /tmp/trash"
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
