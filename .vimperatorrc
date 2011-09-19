@@ -1,5 +1,3 @@
-" 1.2 (created: 2008/08/16 18:51:52)
-
 " mappings
 noremap gb gT
 noremap gv <C-b>
@@ -10,6 +8,9 @@ set complete=sfl
 set editor="xterm -e vim"
 "set editor="gnome-terminal -x vim"
 "set editor="urxvt -e vim"
+
+" http://www.google.com/search?hl=en&q=%s
+set defsearch=ggl
 
 " abbreviations
 
