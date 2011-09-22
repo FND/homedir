@@ -19,10 +19,10 @@ elif [ "$1" = "-v" ]; then
 fi
 
 name=`date +%F`
-if [ -n "$1" ]; then
-	title=`echo "$@" | sed -e "s/ /_/g"`
-	name="${name}_${title}"
-fi
+#if [ -n "$1" ]; then
+#	title=`echo "$@" | sed -e "s/ /_/g"`
+#	name="${name}_${title}"
+#fi
 filepath="$directory/$name.txt"
 
 if [ $append_time = true ]; then
