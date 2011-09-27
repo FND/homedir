@@ -19,7 +19,7 @@
 	amend = commit -v --amend
 	co = checkout
 	s = status
-	stat = status -uno
+	stat = status -s -uno
 	logs = log --stat
 	logd = log --stat -p
 	logui = log --all --graph --decorate --pretty='format:%C(yellow)%h%d %Cblue[%an]%Creset %s'
