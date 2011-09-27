@@ -29,6 +29,8 @@ set directory=/tmp/
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
+set tabpagemax=50
+
 " custom status line
 set laststatus=2
 set statusline=%f%m%r%h%w " file name and flags
