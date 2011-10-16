@@ -8,6 +8,12 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export LANGUAGE="en_US:en"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_TIME="en_DK.utf8" # ISO 8601
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists

@@ -125,9 +125,6 @@ PS1="\$CurDir\$(parse_git_branch)\$ "
 # custom aliases
 source ~/.alias
 
-# set date format to ISO 8601
-export LC_TIME=en_DK.utf8
-
 # make history use timestamps
 export HISTTIMEFORMAT="%F %T "
 
