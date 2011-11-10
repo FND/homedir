@@ -138,7 +138,7 @@ nmap zz :close<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
 nmap <Leader>s :nohlsearch<CR>
 nmap <Leader>l :Lint<CR>
-nmap <Leader>e :lcd %:p:h<CR>:NERDTreeToggle<CR>
+nmap <Leader>e :NERDTreeFind<CR>
 nmap <Leader>q :Qnoise<CR>
 
 " custom abbreviations
