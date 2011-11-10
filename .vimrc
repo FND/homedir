@@ -68,6 +68,7 @@ autocmd FileType mkd set makeprg=markdown\ %
 autocmd FileType mail set textwidth=72
 autocmd FileType mail set expandtab
 autocmd FileType mail match ErrorMsg '\%>72v.\+'
+autocmd FileType mail iabbrev Gruss Gruß
 
 " web-specific settings
 autocmd BufRead,BufNewFile *.json set filetype=javascript
@@ -137,7 +138,7 @@ nmap zz :close<CR>
 nmap <F5> :call StripTrailingWhitespace()<CR>
 nmap <Leader>s :nohlsearch<CR>
 nmap <Leader>l :Lint<CR>
-nmap <Leader>e :NERDTreeToggle<CR>
+nmap <Leader>e :lcd %:p:h<CR>:NERDTreeToggle<CR>
 nmap <Leader>q :Qnoise<CR>
 
 " custom abbreviations
