@@ -83,7 +83,8 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType javascript set noexpandtab
 autocmd FileType javascript set tabstop=4
 autocmd FileType javascript iabbrev fn function() {<CR>}
-autocmd FileType javascript iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }
+autocmd FileType javascript iabbrev log console.log();<Left><Left>
+autocmd FileType javascript iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }<Up>
 
 " Python-specific settings
 autocmd FileType python set makeprg=pep8\ %
