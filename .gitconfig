@@ -23,9 +23,9 @@
 	logs = log --stat
 	logd = log --stat -p
 	logui = log --all --graph --decorate --pretty='format:%C(yellow)%h%d %Cblue[%an]%Creset %s'
-	diffi = diff -M --color-words
-	diffw = diff -M -w
-	diffx = diff -M -w --color-words
+	diffi = diff --find-renames --color-words
+	diffw = diff --find-renames --ignore-all-space
+	diffx = diff --find-renames --ignore-all-space --color-words
 	diffc = diff --cached
 	merges = merge --squash
 	spull = svn rebase
