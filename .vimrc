@@ -124,10 +124,12 @@ function! LoadPlugin(name)
 	exec "source " . l:pluginpath
 endfunction
 
-command TwitVim let twitvim_enable_python = 1 | match ErrorMsg '\%>140v.\+' |
-	\set wrap | call LoadPlugin("twitvim")
+command Rails call LoadPlugin("rails") | call LoadPlugin("autoload/rails") |
+	\tabdo edit
 command DrawIt call LoadPlugin("cecutil") | call LoadPlugin("DrawItPlugin") |
 	\call LoadPlugin("autoload/DrawIt")
+command TwitVim let twitvim_enable_python = 1 | match ErrorMsg '\%>140v.\+' |
+	\set wrap | call LoadPlugin("twitvim")
 
 " custom mappings
 let mapleader = ","
