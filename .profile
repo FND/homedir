@@ -18,7 +18,7 @@ export LC_TIME="en_DK.utf8" # ISO 8601
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        source "$HOME/.bashrc"
     fi
 fi
 
@@ -30,3 +30,6 @@ fi
 # create temporary directories
 mkdir -p /tmp/trash
 mkdir -p /tmp/dev
+
+# Python shell settings
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
