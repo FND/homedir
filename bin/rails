@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+cmd=${1:-console}
+if [ "$#" != "0" ]; then
+	shift
+fi
+
+if [ "$cmd" = "c" -o "$cmd" = "console" ]; then
+	set -x
+	pry -r ./config/environment
+else
+	set -x
+	bundle exec rails $cmd $@ # XXX: won't work with `rails new`
+fi
