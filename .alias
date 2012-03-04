@@ -1,4 +1,4 @@
-alias ll="ls -alh"
+alias ll="ls -alh --color"
 alias cp="cp -i"
 alias mv="mv -i"
 alias less="less -R"
@@ -6,10 +6,11 @@ alias cgrep="grep --color=always"
 
 alias set_title='printf "\033]2;%s\007"'
 alias run="xdg-open"
-alias ins="sudo apt-get install"
+alias dist_search="yaourt -Ss"
+alias dist_install="sudo pacman -S"
+alias dist_upgrade="sudo pacman -Syu"
 alias clip="xsel --clipboard"
 alias say="espeak -v"
-alias rvm_activate="alias be='bundle exec'; alias rails='$HOME/bin/rails'; source $HOME/.rvm/scripts/rvm"
 
 alias trash="mv -t /tmp/trash"
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"

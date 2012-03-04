@@ -5,7 +5,7 @@ noremap gv <C-b>
 " options
 set hlsearch
 set complete=sfl
-set editor="xterm -e vim"
+set editor="xterm -u8 -e vim"
 "set editor="gnome-terminal -x vim"
 "set editor="urxvt -e vim"
 
