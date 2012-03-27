@@ -50,4 +50,4 @@ export PRI_X=$WHITE   # color for rest of them
 # TODOTXT_FINAL_FILTER will filter list output after colorization,
 # priority hiding, context hiding, and project hiding. That is,
 # just before the list output is displayed.
-export TODOTXT_FINAL_FILTER="~/.todo/filters/futureTasks"
+export TODOTXT_FINAL_FILTER="~/.todo/filters/futureTasks | ~/.todo/filters/randomZ"
