@@ -1,10 +1,7 @@
-# load Hirb (without adding it to the respective Gemfile)
+# activate Hirb
 begin
-  require 'bundler'
-  $: << Dir.glob(Bundler.bundle_path.join(*%w(gems hirb-* lib))).first
   require 'hirb'
   Hirb.enable
-  puts "activated Hirb v#{Hirb::VERSION}"
   # source: https://github.com/pry/pry/wiki/FAQ#wiki-hirb
   pry_print = Pry.config.print
   Pry.config.print = proc do |output, value|
