@@ -54,6 +54,7 @@ match ErrorMsg '\%>80v.\+'
 let g:netrw_http_cmd = "wget -q -O"
 
 " plain-text settings
+autocmd FileType text set expandtab
 autocmd FileType plaintext set textwidth=80
 autocmd FileType plaintext set expandtab
 "autocmd FileType plaintext set formatoptions=toanl
@@ -96,6 +97,7 @@ autocmd FileType python set tabstop=4
 " Ruby-specific settings
 autocmd FileType ruby,eruby set expandtab
 autocmd FileType ruby,eruby set tabstop=2
+autocmd FileType ruby,eruby set shiftwidth=2
 
 " custom commands
 command Ftxt set filetype=plaintext
