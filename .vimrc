@@ -64,6 +64,8 @@ set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
 
 " Markdown settings
 autocmd FileType mkd set makeprg=markdown\ %
+autocmd FileType mkd command Formdi % !formd -i
+autocmd FileType mkd command Formdr % !formd -r
 
 " e-mail settings
 autocmd FileType mail set textwidth=72
