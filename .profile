@@ -14,3 +14,9 @@ export LC_CTYPE=en_US.utf8
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# touchpad settings
+synclient PalmDetect=1
+synclient TapButton1=0
+synclient TapButton2=1
+synclient CoastingSpeed=0
