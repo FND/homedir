@@ -23,6 +23,7 @@ set wildmode=list:longest,full
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+set smarttab
 
 set directory=/tmp/
 
