@@ -65,8 +65,6 @@ set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
 
 " Markdown settings
 autocmd FileType mkd set makeprg=markdown\ %
-autocmd FileType mkd command Formdi % !formd -i
-autocmd FileType mkd command Formdr % !formd -r
 
 " e-mail settings
 autocmd FileType mail set textwidth=72
@@ -121,6 +119,8 @@ command Lint exec "write | make | cope"
 command Clip call CopyToClipboard()
 command -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
 command -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
+" Markdown link references (argument: [i|r])
+command -nargs=1 Formd % !formd -<args>
 
 " on-demand plugins
 
