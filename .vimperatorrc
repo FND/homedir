@@ -2,6 +2,9 @@
 noremap gb gT
 noremap gv <C-b>
 
+" custom commands
+command jstoggle :set! javascript.enabled!=true
+
 " options
 set hlsearch
 set complete=sfl
