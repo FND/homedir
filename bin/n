@@ -46,6 +46,10 @@ while getopts "hd:ln" option; do
 	esac
 done
 
+if [ "$*" = "-" ]; then # alias for `-n`; convenience hack
+	append_time=false
+fi
+
 #if [ -n "$1" ]; then
 #	title=`echo "$@" | sed -e "s/ /_/g"`
 #	name="${name}_${title}"

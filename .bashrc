@@ -37,6 +37,10 @@ PS1="\$CurDir\$(parse_git_branch)\$ "
 # custom aliases
 source ~/.alias
 
+# todotxt auto-completion
+source ~/Scripts/todotxt/todo_completion
+complete -F _todo t # required for alias
+
 # MotD on first terminal (usually persistent, e.g. Tilda)
 if [ `tty` = "/dev/pts/0" ]; then
 	todo.sh listpri
