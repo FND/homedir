@@ -13,7 +13,7 @@ set hlsearch
 syntax on
 
 set spell spelllang=en_us
-autocmd FileType html,xhtml,javascript,python,sh set nospell
+autocmd FileType html,xhtml,css,javascript,python,sh set nospell
 
 set incsearch
 set autoindent
@@ -45,7 +45,9 @@ set list
 set listchars=tab:⋯\ ,trail:·
 
 " highlight long lines
-match ErrorMsg '\%>80v.\+'
+set textwidth=80
+set colorcolumn=+0 " requires Vim 7.3
+highlight ColorColumn ctermbg=0
 
 " strip trailing whitespace
 "autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
@@ -56,21 +58,21 @@ let g:netrw_http_cmd = "wget -q -O"
 
 " plain-text settings
 autocmd FileType text set expandtab
-autocmd FileType plaintext set textwidth=80
 autocmd FileType plaintext set expandtab
 "autocmd FileType plaintext set formatoptions=toanl
 autocmd FileType plaintext set formatoptions=tnl
-autocmd FileType plaintext match ErrorMsg '\%>80v.\+'
 set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
 
 " Markdown settings
 autocmd FileType mkd set makeprg=markdown\ %
 
 " e-mail settings
-autocmd FileType mail set textwidth=72
 autocmd FileType mail set expandtab
-autocmd FileType mail match ErrorMsg '\%>72v.\+'
+autocmd FileType mail set textwidth=72
 autocmd FileType mail iabbrev Gruss Gruß
+
+" Git settings
+autocmd FileType gitcommit set textwidth=72
 
 " web-specific settings
 autocmd BufRead,BufNewFile *.json set filetype=javascript
@@ -133,7 +135,7 @@ command Rails call LoadPlugin("rails") | call LoadPlugin("autoload/rails") |
 	\tabdo edit
 command DrawIt call LoadPlugin("cecutil") | call LoadPlugin("DrawItPlugin") |
 	\call LoadPlugin("autoload/DrawIt")
-command TwitVim let twitvim_enable_python = 1 | match ErrorMsg '\%>140v.\+' |
+command TwitVim let twitvim_enable_python = 1 | set textwidth=140 |
 	\set wrap | call LoadPlugin("twitvim")
 
 " custom mappings
