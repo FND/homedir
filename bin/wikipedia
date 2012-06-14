@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+if [ "$#" = "2" ]; then
+	lang="${1:?}"
+	term="${2:?}"
+else
+	lang="en"
+	term="${1:?}"
+fi
+
+uri="http://$lang.wikipedia.org/wiki/$term"
+
+echo "looking up $term"
+echo "$uri"
+w3m -no-cookie -dump "$uri" | less
