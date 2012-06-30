@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+df -h | tail -n +2 | awk '{ print $5 "  " $1 }' | sed "s/^\(.%\)/ \1/" | \
+		sort -r | while read line; do
+	percentage=`echo $line | cut -d"%" -f1`
+	if [ $percentage -ge 90 ]; then
+		echo -e "\e[31m$line  [LOW]\e[0m"
+	else
+		echo "$line"
+	fi
+done
