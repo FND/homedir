@@ -8,7 +8,7 @@ alias set_title='printf "\033]2;%s\007"'
 alias run="xdg-open"
 alias dist_search="yaourt -Ss"
 alias dist_install="sudo pacman -S"
-alias dist_upgrade="sudo pacman -Syu"
+alias dist_upgrade="sudo pacman -Syu; yaourt -Syu --aur --devel"
 alias clip="xsel --clipboard"
 alias say="espeak -v"
 
