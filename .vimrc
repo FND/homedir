@@ -101,6 +101,7 @@ autocmd FileType python set tabstop=4
 autocmd FileType ruby,eruby set expandtab
 autocmd FileType ruby,eruby set tabstop=2
 autocmd FileType ruby,eruby set shiftwidth=2
+autocmd FileType ruby set makeprg=ruby\ -c\ %
 
 " custom commands
 command Ftxt set filetype=plaintext
