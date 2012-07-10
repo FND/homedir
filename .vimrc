@@ -123,6 +123,8 @@ command -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substit
 command -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
 " Markdown link references (argument: [i|r])
 command -nargs=1 Formd % !formd -<args>
+command PathogenActivate runtime bundle/vim-pathogen/autoload/pathogen.vim |
+	\call pathogen#infect()
 
 " on-demand plugins
 
