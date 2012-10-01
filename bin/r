@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+set -e
+
+txt="$@"
+edit=${EDITOR:-vi}
+
+directory="$HOME/notes/log"
+name=`date +"%G-%V"`
+
+filepath="$directory/$name.txt"
+
+if [ "$txt" = "" ]; then
+	tail -n5 "$filepath"
+elif [ "$txt" = "edit" ]; then
+	$edit "$filepath"
+else
+	txt="`date +"%F %T"` $txt"
+	echo "$txt" | tee -a "$filepath"
+fi
