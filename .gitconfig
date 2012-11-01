@@ -21,8 +21,10 @@
 	s = status
 	stat = status -s -uno
 	logs = log --stat
-	logd = log --stat -p
-	logui = log --all --graph --decorate --pretty='format:%C(yellow)%h%d %Cblue[%an]%Creset %s'
+	logd = log --stat -p -m
+	ll = log --pretty=nice
+	lll = log --graph --decorate --pretty=neat
+	llll = log --all --graph --decorate --pretty=neat
 	diffi = diff --find-renames --color-words
 	diffw = diff --find-renames --ignore-all-space
 	diffx = diff --find-renames --ignore-all-space --color-words
@@ -54,3 +56,8 @@
 	new = green bold
 [log]
 	date = iso
+[push]
+	default = upstream
+[pretty]
+	neat = format:%C(yellow)%h%d %Cblue[%an]%Creset %s
+	nice = format:%Cblue%h %Cred%cr %Cgreen%cn%Creset - %s%C(yellow)%+d
