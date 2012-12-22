@@ -2,6 +2,7 @@ alias ll="ls -alh --color"
 alias cp="cp -i"
 alias mv="mv -i"
 alias less="less -R"
+alias grep="grep --color=auto"
 alias cgrep="grep --color=always"
 
 alias set_title='printf "\033]2;%s\007"'

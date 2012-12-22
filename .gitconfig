@@ -37,6 +37,7 @@
 [color]
 	branch = auto
 	diff = auto
+	grep = auto
 	status = auto
 	interactive = auto
 [color "branch"]
