@@ -1,3 +1,12 @@
+Pry.commands.alias_command 'n', 'next'
+Pry.commands.alias_command 's', 'step'
+
+# highlight Rails production mode
+if (Rails.env rescue nil) == "production"
+	PRYMPT = Pry.config.prompt[0]
+	Pry.config.prompt[0] = proc { |*args| "\e[1;31m[" + Rails.env + "]\e[0m " + PRYMPT.call(*args) }
+end
+
 # activate Hirb
 begin
   require 'hirb'
