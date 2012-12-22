@@ -45,9 +45,12 @@ set list
 set listchars=tab:⋯\ ,trail:·
 
 " highlight long lines
-set textwidth=80
 set colorcolumn=+0 " requires Vim 7.3
 highlight ColorColumn ctermbg=0
+
+" highlight current line
+"set cursorline
+"highlight CursorLine cterm=NONE ctermbg=0
 
 " strip trailing whitespace
 "autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
@@ -61,10 +64,12 @@ autocmd FileType text set expandtab
 autocmd FileType plaintext set expandtab
 "autocmd FileType plaintext set formatoptions=toanl
 autocmd FileType plaintext set formatoptions=tnl
+autocmd FileType plaintext set textwidth=80
 set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
 
 " Markdown settings
 autocmd FileType mkd set makeprg=markdown\ %
+autocmd FileType mkd set textwidth=80
 
 " e-mail settings
 autocmd FileType mail set expandtab
@@ -83,6 +88,7 @@ autocmd FileType html syn keyword htmlTagName contained section header footer na
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType css syn keyword cssTagName section header footer nav aside hgroup article figure
+autocmd FileType javascript set textwidth=80
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType javascript set noexpandtab
 autocmd FileType javascript set tabstop=4
@@ -91,6 +97,7 @@ autocmd FileType javascript iabbrev log console.log();<Left><Left>
 autocmd FileType javascript iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }<Up>
 
 " Python-specific settings
+autocmd FileType python set textwidth=80
 autocmd FileType python set makeprg=pep8\ %
 autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -98,10 +105,11 @@ autocmd FileType python set expandtab
 autocmd FileType python set tabstop=4
 
 " Ruby-specific settings
+autocmd FileType ruby set textwidth=80
 autocmd FileType ruby,eruby set expandtab
 autocmd FileType ruby,eruby set tabstop=2
 autocmd FileType ruby,eruby set shiftwidth=2
-autocmd FileType ruby set makeprg=ruby\ -c\ %
+autocmd FileType ruby set makeprg=bundle\ exec\ cane\ --all\ %
 
 " custom commands
 command Ftxt set filetype=plaintext
@@ -153,6 +161,9 @@ nmap <Leader>s :nohlsearch<CR>
 nmap <Leader>l :Lint<CR>
 nmap <Leader>e :NERDTreeFind<CR>
 nmap <Leader>q :Qnoise<CR>
+nmap <Leader>h :GundoToggle<CR>
+" temporarily activate spell checking
+nmap <Leader>c :Lde\|exec "normal z="\|set nospell<CR>
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
