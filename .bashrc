@@ -46,3 +46,12 @@ if [ `tty` = "/dev/pts/0" ]; then
 	todo.sh listpri
 	ssh-add ~/.ssh/id_rsa
 fi
+
+# command bookmarks
+if [ -f "$HOME/.shellmarks" ]; then
+	set -o history
+	set -o histexpand
+	while read line; do
+		history -s "$line"
+	done < "$HOME/.shellmarks"
+fi
