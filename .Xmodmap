@@ -1,7 +1,7 @@
 ! disable Caps Lock
 clear Lock
 keycode 66 = Escape
-!keysym Caps_Lock = Escape
+keysym Caps_Lock = Escape
 
 ! disable ThinkPad forward/backward keys
 keycode 166 =
