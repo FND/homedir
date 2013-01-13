@@ -1,6 +1,6 @@
 XTerm*Background: black
 XTerm*Foreground: green
-xterm*faceName: -misc-dejavu sans mono-medium-r-normal-*-*-120-*-*-m-*-iso8859-1
+xterm*faceName: -misc-source sans mono-medium-r-normal-*-*-120-*-*-m-*-iso8859-1
 
 ! Xft settings
 Xft.dpi: 96

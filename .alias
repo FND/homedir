@@ -18,8 +18,9 @@ alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
 
 alias t="todo.sh"
 alias tt="clear; todo.sh listpri"
+alias vocab="r -f vocab -n"
 alias wvim="~/Scripts/launch.sh gnome-terminal -x vim -p"
 alias word="~/Scripts/randict.sh"
 alias trans="~/Scripts/translation.sh"
-alias tweet="~/Scripts/Twitter.sh"
-alias tw="~/Scripts/TiddlyWiki.sh"
+
+alias venv="virtualenv venv --distribute; ln -s venv/bin/activate"
