@@ -7,7 +7,7 @@ cat << EOF
 \`r\`ecord: simple plain-text notes manager
 
 Usage:
-  $ r [<message>|edit]
+  $ r [options] [<message>|edit]
 
 records the respective message or opens the current log file for editing - if
 no arguments are supplied, the last few entires will be displayed
@@ -17,33 +17,50 @@ Options:
     display this help message
   -n
     suppress timestamp
+  -f
+    file name to use instead of the default one
 
 log files are rotated on a weekly basis
 EOF
 }
 
-if [ "$1" = "-h" ]; then
-	usage
-	exit 1
-fi
-
-txt="$@"
 edit=${EDITOR:-vi}
-
 directory="$HOME/notes/log"
-name=`date +"%G-%V"`
 
-filepath="$directory/$name.txt"
+append_time=true
+filename=`date +"%G-%V"`
+
+opt_count=0 # XXX: hacky?
+while getopts "hf:n" option; do
+	case $option in
+		h)
+			usage
+			exit 1
+			;;
+		f)
+			opt_count=`expr $opt_count + 2`
+			filename="$OPTARG"
+			;;
+		n)
+			opt_count=`expr $opt_count + 1`
+			append_time=false
+			;;
+	esac
+done
+while [ $opt_count -gt 0 ]; do
+	shift
+	opt_count=`expr $opt_count - 1` || true
+done
+
+filepath="$directory/$filename.txt"
+txt="$@"
 
 if [ "$txt" = "" ]; then
 	tail -n5 "$filepath"
 elif [ "$txt" = "edit" ]; then
 	$edit "$filepath"
 else
-	if [ "$1" = "-n" ]; then
-		shift
-		txt="$@"
-	else
+	if [ $append_time = true ]; then
 		txt="`date +"%F %T"` $txt"
 	fi
 	echo "$txt" | tee -a "$filepath"
