@@ -11,7 +11,7 @@ Usage:
 
 Options:
   -h
-    Display this help message.
+    display this help message
   -d <date>
     use given date instead of today
   -l
