@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
@@ -30,7 +30,6 @@ directory="$HOME/notes/log"
 append_time=true
 filename=`date +"%G-%V"`
 
-opt_count=0 # XXX: hacky?
 while getopts "hf:n" option; do
 	case $option in
 		h)
@@ -38,19 +37,14 @@ while getopts "hf:n" option; do
 			exit 1
 			;;
 		f)
-			opt_count=`expr $opt_count + 2`
 			filename="$OPTARG"
 			;;
 		n)
-			opt_count=`expr $opt_count + 1`
 			append_time=false
 			;;
 	esac
 done
-while [ $opt_count -gt 0 ]; do
-	shift
-	opt_count=`expr $opt_count - 1` || true
-done
+shift $(($OPTIND - 1)) # drop option arguments
 
 filepath="$directory/$filename.txt"
 txt="$@"
