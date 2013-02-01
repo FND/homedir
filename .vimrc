@@ -103,6 +103,7 @@ autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set expandtab
 autocmd FileType python set tabstop=4
+autocmd FileType python iabbrev trace import pdb; pdb.set_trace()
 
 " Ruby-specific settings
 autocmd FileType ruby set textwidth=80
@@ -110,8 +111,10 @@ autocmd FileType ruby,eruby set expandtab
 autocmd FileType ruby,eruby set tabstop=2
 autocmd FileType ruby,eruby set shiftwidth=2
 autocmd FileType ruby set makeprg=bundle\ exec\ cane\ --all\ %
+autocmd FileType ruby iabbrev pry require 'pry'; binding.pry
 
 " custom commands
+command SaneTabs set noexpandtab | set tabstop=4 | set shiftwidth=4
 command Ftxt set filetype=plaintext
 command Fm set filetype=mail
 command Fmkd set filetype=mkd
