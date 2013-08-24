@@ -113,6 +113,12 @@ autocmd FileType ruby,eruby set shiftwidth=2
 autocmd FileType ruby set makeprg=bundle\ exec\ cane\ --all\ %
 autocmd FileType ruby iabbrev pry require 'pry'; binding.pry
 
+" RDF-specific settings
+autocmd BufRead,BufNewFile *.n3 set filetype=n3
+autocmd BufRead,BufNewFile *.nt set filetype=n3
+autocmd BufRead,BufNewFile *.ttl set filetype=n3
+autocmd BufRead,BufNewFile *.sparql set filetype=n3
+
 " custom commands
 command SaneTabs set noexpandtab | set tabstop=4 | set shiftwidth=4
 command Ftxt set filetype=plaintext
