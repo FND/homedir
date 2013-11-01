@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-converter="$HOME/Scripts/Markdown.pl"
+converter="Markdown.pl"
 
 filepath="$1"
 tmpfile="/tmp/markdown_$$.html"
