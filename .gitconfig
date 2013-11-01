@@ -28,6 +28,7 @@
 	diffi = diff --find-renames --color-words
 	diffw = diff --find-renames --ignore-all-space
 	diffx = diff --find-renames --ignore-all-space --color-words
+	diffp = diff --patience
 	diffc = diff --cached
 	merges = merge --squash
 	spull = svn rebase
