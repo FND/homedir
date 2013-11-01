@@ -103,7 +103,7 @@ autocmd FileType python set errorformat=%f:%l:%c:\ %m
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set expandtab
 autocmd FileType python set tabstop=4
-autocmd FileType python iabbrev trace import pdb; pdb.set_trace()
+autocmd FileType python iabbrev trace from pdb import set_trace; set_trace()
 
 " Ruby-specific settings
 autocmd FileType ruby set textwidth=80
