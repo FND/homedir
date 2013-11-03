@@ -38,7 +38,7 @@ PS1="\$CurDir\$(parse_git_branch)\$ "
 source ~/.alias
 
 # todotxt auto-completion
-source ~/Scripts/todotxt/todo_completion
+source ~/Dev/todo.txt-cli/todo_completion
 complete -F _todo t # required for alias
 
 # MotD on first terminal (usually persistent, e.g. Tilda)
