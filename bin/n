@@ -14,6 +14,8 @@ Options:
     display this help message
   -d <date>
     use given date instead of today
+  -f
+    only output the respective filename
   -l
     list entries
   -n
@@ -23,9 +25,10 @@ EOF
 
 directory="$HOME/notes"
 append_time=true
+print_filename=false
 name=`date +%F`
 
-while getopts "hd:ln" option; do
+while getopts "hd:fln" option; do
 	case $option in
 		h)
 			usage
@@ -35,6 +38,9 @@ while getopts "hd:ln" option; do
 			date="$OPTARG"
 			name=`date -d "$date" +%F`
 			append_time=false
+			;;
+		f)
+			print_filename=true
 			;;
 		l)
 			ls -1 "$directory" | tail | sed -e "s/\.txt$//"
@@ -59,6 +65,11 @@ filepath="$directory/$name.txt"
 
 if [ $append_time = true ]; then
 	{ echo; echo; date +%R; } >> "$filepath"
+fi
+
+if [ $print_filename = true ]; then
+	echo "$filepath"
+	exit 0
 fi
 
 $EDITOR "$filepath"
