@@ -24,3 +24,4 @@ alias word="~/Scripts/randict.sh"
 alias trans="~/Scripts/translation.sh"
 
 alias venv="virtualenv venv --distribute; ln -s venv/bin/activate"
+alias be="bundle exec"
