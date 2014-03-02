@@ -1,17 +1,11 @@
-alias ll="ls -alh --color"
+alias ll="ls -alhG"
 alias cp="cp -i"
 alias mv="mv -i"
 alias less="less -R"
 alias grep="grep --color=auto"
 alias cgrep="grep --color=always"
 
-alias set_title='printf "\033]2;%s\007"'
-alias run="xdg-open"
-alias dist_search="yaourt -Ss"
-alias dist_install="sudo pacman -S"
-alias dist_upgrade="sudo pacman -Syu; read -p 'press enter to continue'; yaourt -Syu --aur --devel"
-alias clip="xsel --clipboard"
-alias say="espeak -v"
+alias dist_upgrade="brew update && brew upgrade"
 
 alias trash="mv -t /tmp/trash"
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
@@ -19,7 +13,6 @@ alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
 alias t="todo.sh"
 alias tt="clear; todo.sh listpri"
 alias vocab="r -f vocab -n"
-alias wvim="~/Scripts/launch.sh gnome-terminal -x vim -p"
 alias word="~/Scripts/randict.sh"
 alias trans="~/Scripts/translation.sh"
 

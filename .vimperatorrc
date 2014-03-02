@@ -8,40 +8,7 @@ command jstoggle :set! javascript.enabled!=true
 " options
 set hlsearch
 set complete=sfl
-set editor="xterm -u8 -e vim"
-"set editor="gnome-terminal -x vim"
-"set editor="urxvt -e vim"
+set editor="/Users/fnd/bin/mvim"
 
 " http://www.google.com/search?hl=en&q=%s
 set defsearch=ggl
-
-" abbreviations
-
-"source! ~/.vimperatorrc.local
-
-" vim: set ft=vimperator:
-
-" display feed button in status bar (cf. http://vimperator.org/trac/ticket/17) -- XXX: incompatible with Firefox 4!?
-"javascript <<EOF
-"(function(){
-"	var feedPanel = document.createElement("statusbarpanel");
-"	feedPanel.setAttribute("id", "feed-panel-clone");
-"	feedPanel.appendChild(document.getElementById("feed-button"));
-"	feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
-"	document.getElementById("status-bar").
-"		insertBefore(feedPanel, document.getElementById("security-button"));
-"})();
-"EOF
-
-" enhance yanking behavior (cf. http://vimperator.org/trac/ticket/73)
-js <<EOF
-mappings.addUserMap([modes.NORMAL], ["Y"],
-	"Yank the currently selected text",
-	function() {
-		buffer.getCurrentWord();
-		events.feedkeys("<C-v>" + (/^Mac/.test(navigator.platform) ? "<M-c>" : "<C-c>"), true);
-		setTimeout(function() {
-			liberator.echo("Yanked " + util.readFromClipboard(), commandline.FORCE_SINGLELINE);
-		}, 20);
-	});
-EOF

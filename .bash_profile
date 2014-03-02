@@ -1,5 +1,14 @@
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# add ~/bin to PATH
+if [ -d "$HOME/bin" ] ; then
+       PATH="$HOME/bin:$PATH"
+fi
+
+# create temporary directories
+mkdir -p /tmp/trash
+mkdir -p /tmp/dev
+
+# Python shell settings
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 # basic settings
 HISTSIZE=1000
@@ -13,10 +22,6 @@ shopt -s histappend
 # check the window size after each command and, if necessary, update the values
 # of LINES and COLUMNS.
 shopt -s checkwinsize
-
-#
-# FND
-#
 
 # set environment variables
 export EDITOR="vim"
@@ -37,14 +42,18 @@ PS1="\$CurDir\$(parse_git_branch)\$ "
 # custom aliases
 source ~/.alias
 
+# auto-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
+
 # todotxt auto-completion
 source ~/Dev/todo.txt-cli/todo_completion
 complete -F _todo t # required for alias
 
 # MotD on first terminal (usually persistent, e.g. Tilda)
-if [ `tty` = "/dev/pts/0" ]; then
+if [ `tty` = "/dev/ttys001" ]; then
 	todo.sh listpri
-	ssh-add ~/.ssh/id_rsa
 fi
 
 # command bookmarks

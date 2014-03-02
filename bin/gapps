@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec google-chrome --user-data-dir="$HOME/.config/google-chrome/GApps" "$@"

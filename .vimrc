@@ -32,6 +32,12 @@ set omnifunc=syntaxcomplete#Complete
 
 set tabpagemax=50
 
+if has("gui_running")
+	set guifont=Menlo:h14
+	colorscheme solarized
+	set background=dark
+endif
+
 " custom status line
 set laststatus=2
 set statusline=%f%m%r%h%w " file name and flags

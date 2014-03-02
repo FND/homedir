@@ -1,0 +1,7 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+/* use monospace font in multi-line input fields */
+textarea {
+	font-family: monospace !important;
+	font-size: 11pt !important;
+}

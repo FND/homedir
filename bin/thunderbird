@@ -1,9 +1,0 @@
-#!/bin/sh
-
-export LC_TIME=en_DK.utf8
-
-if [ "$LC_ALL" != "$LC_TIME" ]; then
-	unset LC_ALL
-fi
-
-exec /usr/bin/thunderbird "$@"
