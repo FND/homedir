@@ -1,5 +1,15 @@
 set nocompatible " use Vim rather than Vi settings
 
+" Vundle plugin management
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle "gmarik/vundle"
+Bundle "scrooloose/nerdtree"
+Bundle "tpope/vim-dispatch"
+
+filetype plugin on
+
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
 set confirm
@@ -27,7 +37,6 @@ set smarttab
 
 set directory=/tmp/
 
-filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 set tabpagemax=50
