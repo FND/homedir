@@ -60,8 +60,8 @@ set list
 set listchars=tab:⋯\ ,trail:·
 
 " highlight long lines
-set colorcolumn=+0 " requires Vim 7.3
-highlight ColorColumn ctermbg=0
+set colorcolumn=+1 " requires Vim 7.3
+highlight ColorColumn ctermbg=DarkGray guibg=DarkGray
 
 " highlight current line
 "set cursorline
