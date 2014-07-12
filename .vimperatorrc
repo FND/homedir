@@ -9,6 +9,7 @@ command jstoggle :set! javascript.enabled!=true
 set hlsearch
 set complete=sfl
 set editor="/Users/fnd/bin/mvim"
+set toolbars=nonavigation
 
 " http://www.google.com/search?hl=en&q=%s
 set defsearch=ggl

@@ -6,6 +6,7 @@ alias grep="grep --color=auto"
 alias cgrep="grep --color=always"
 
 alias dist_upgrade="brew update && brew upgrade"
+alias away="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 alias trash="mv -t /tmp/trash"
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"

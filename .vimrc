@@ -3,10 +3,12 @@ set nocompatible " use Vim rather than Vi settings
 " Vundle plugin management
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle "gmarik/vundle"
-Bundle "scrooloose/nerdtree"
-Bundle "tpope/vim-dispatch"
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Gundo'
+Plugin 'editorconfig/editorconfig-vim'
+call vundle#end()
 
 filetype plugin on
 
