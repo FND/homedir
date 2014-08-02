@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Gundo'
+Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
@@ -190,6 +191,11 @@ nmap <Leader>q :Qnoise<CR>
 nmap <Leader>h :GundoToggle<CR>
 " temporarily activate spell checking
 nmap <Leader>c :Lde\|exec "normal z="\|set nospell<CR>
+" ctrlp: open tab by default
+let g:ctrlp_prompt_mappings = {
+	\ 'AcceptSelection("e")': ["<c-t>"],
+	\ 'AcceptSelection("t")': ["<cr>"]
+\ }
 
 " custom abbreviations
 iabbrev DBG XXX: DEBUG
