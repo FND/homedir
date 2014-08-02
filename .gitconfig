@@ -31,6 +31,7 @@
 	diffp = diff --patience
 	diffc = diff --cached
 	merges = merge --squash
+	rpull = pull --rebase
 	spull = svn rebase
 	spush = svn dcommit
 	fshow = ! sh -c 'git show --pretty="format:" --name-only $1 | grep -v "^$" | uniq | sed -e "s#^#`git rev-parse --show-toplevel`/#"' -
