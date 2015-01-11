@@ -1,4 +1,4 @@
-set nocompatible " use Vim rather than Vi settings
+set nocompatible
 
 " Vundle plugin management
 filetype off
@@ -7,49 +7,41 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Gundo'
-Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
-filetype plugin on
+set nobackup
+set directory=/tmp/
+set tabpagemax=50
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
-set confirm
-set nobackup
-
-set nowrap
-set ruler
+"set ruler
 set number
+syntax on
+filetype plugin on
+
+set scrolloff=3
+"set confirm
+set wildmode=list:longest,full
+set autoindent
 
 set hlsearch
-syntax on
-
-set spell spelllang=en_us
-autocmd FileType html,xhtml,css,javascript,python,sh set nospell
-
 set incsearch
-set autoindent
-set scrolloff=3
-set wildmode=list:longest,full
 
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set smarttab
+"set spell spelllang=en_us
+"set omnifunc=syntaxcomplete#Complete
 
-set directory=/tmp/
-
-set omnifunc=syntaxcomplete#Complete
-
-set tabpagemax=50
-
+" appearance
 if has("gui_running")
 	set guifont=Menlo:h14
 	colorscheme solarized
 	set background=dark
 endif
-
 " custom status line
 set laststatus=2
 set statusline=%f%m%r%h%w " file name and flags
@@ -57,85 +49,16 @@ set statusline+=\ %{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bom
 set statusline+=[%{&ff}]\ [%Y] " file type
 set statusline+=%= " right align
 set statusline+=[%02l,%02v]\ [%p%%] " cursor position
-
 " display whitespace characters
 set list
 set listchars=tab:⋯\ ,trail:·
-
 " highlight long lines
 set colorcolumn=+1 " requires Vim 7.3
 highlight ColorColumn ctermbg=DarkGray guibg=DarkGray
 
-" highlight current line
-"set cursorline
-"highlight CursorLine cterm=NONE ctermbg=0
-
-" strip trailing whitespace
-"autocmd BufWritePre,FileWritePre * call StripTrailingWhitespace()
-
 " retrieve remote files' source (rather than rendered markup)
 " (cf. http://vimperator.org/trac/ticket/25)
 let g:netrw_http_cmd = "wget -q -O"
-
-" plain-text settings
-autocmd FileType text set expandtab
-autocmd FileType plaintext set expandtab
-"autocmd FileType plaintext set formatoptions=toanl
-autocmd FileType plaintext set formatoptions=tnl
-autocmd FileType plaintext set textwidth=80
-set formatlistpat=^\\s*[0-9*]\\+[\\]:.)}\\t\ ]\\s*
-
-" Markdown settings
-autocmd FileType mkd set makeprg=markdown\ %
-autocmd FileType mkd set textwidth=80
-
-" e-mail settings
-autocmd FileType mail set expandtab
-autocmd FileType mail set textwidth=72
-autocmd FileType mail iabbrev Gruss Gruß
-
-" Git settings
-autocmd FileType gitcommit set textwidth=72
-
-" web-specific settings
-autocmd BufRead,BufNewFile *.json set filetype=javascript
-autocmd FileType html,xhtml,css,javascript set makeprg=jslint-reporter\ %
-autocmd FileType html,xhtml,css,javascript set errorformat=%f:%l:%c:%m
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType html syn keyword htmlTagName contained section header footer nav aside hgroup article figure
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType css syn keyword cssTagName section header footer nav aside hgroup article figure
-autocmd FileType javascript set textwidth=80
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType javascript set noexpandtab
-autocmd FileType javascript set tabstop=4
-autocmd FileType javascript iabbrev fn function() {<CR>}
-autocmd FileType javascript iabbrev log console.log();<Left><Left>
-autocmd FileType javascript iabbrev JSX try {<CR>} catch(exc) { console.log("error", exc); }<Up>
-
-" Python-specific settings
-autocmd FileType python set textwidth=80
-autocmd FileType python set makeprg=pep8\ %
-autocmd FileType python set errorformat=%f:%l:%c:\ %m
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python set expandtab
-autocmd FileType python set tabstop=4
-autocmd FileType python iabbrev trace from pdb import set_trace; set_trace()
-
-" Ruby-specific settings
-autocmd FileType ruby set textwidth=80
-autocmd FileType ruby,eruby set expandtab
-autocmd FileType ruby,eruby set tabstop=2
-autocmd FileType ruby,eruby set shiftwidth=2
-autocmd FileType ruby set makeprg=bundle\ exec\ cane\ --all\ %
-autocmd FileType ruby iabbrev pry require 'pry'; binding.pry
-
-" RDF-specific settings
-autocmd BufRead,BufNewFile *.n3 set filetype=n3
-autocmd BufRead,BufNewFile *.nt set filetype=n3
-autocmd BufRead,BufNewFile *.ttl set filetype=n3
-autocmd BufRead,BufNewFile *.sparql set filetype=n3
 
 " custom commands
 command SaneTabs set noexpandtab | set tabstop=4 | set shiftwidth=4
@@ -161,20 +84,6 @@ command -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}
 command -nargs=1 Formd % !formd -<args>
 command PathogenActivate runtime bundle/vim-pathogen/autoload/pathogen.vim |
 	\call pathogen#infect()
-
-" on-demand plugins
-
-function! LoadPlugin(name)
-	let l:pluginpath = globpath(&rtp, "dplugins/" . a:name . ".vim")
-	exec "source " . l:pluginpath
-endfunction
-
-command Rails call LoadPlugin("rails") | call LoadPlugin("autoload/rails") |
-	\tabdo edit
-command DrawIt call LoadPlugin("cecutil") | call LoadPlugin("DrawItPlugin") |
-	\call LoadPlugin("autoload/DrawIt")
-command TwitVim let twitvim_enable_python = 1 | set textwidth=140 |
-	\set wrap | call LoadPlugin("twitvim")
 
 " custom mappings
 let mapleader = ","
@@ -219,3 +128,33 @@ function! CopyToClipboard()
 	normal 'yz<cr>
 	normal `z
 endfunction
+
+" adapted from http://stackoverflow.com/a/26140622
+
+function! GetVisual()
+	try
+		let v_save = @v
+		normal! gv"vy
+		return @v
+	finally
+		let @v = v_save
+	endtry
+endfunction
+
+fun! CenterMe()
+	let v = GetVisual()
+	let lre = '^\zs\s*\ze\S'
+	let rre = '\s*$'
+	let sp= matchstr(v, lre)
+	let sp .= matchstr(v, rre)
+	let ln=len(sp)
+	let v = substitute(v, lre, sp[:ln/2-1], '')
+	let v = substitute(v, rre, sp[ln/2:], '')
+	let ve_save = &virtualedit
+	let v_save = @v
+	let &virtualedit = 'all'
+	call setreg('v', v, visualmode())
+	normal! gvx"vP
+	let @v = v_save
+	let &virtualedit = ve_save
+endf
