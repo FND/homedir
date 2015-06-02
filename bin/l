@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -e
+
+usage() {
+cat << EOF
+simple plain-text life logger
+
+Usage:
+  $ l [<summary>]
+EOF
+}
+
+format="%F (%a)"
+timestamp=`date +"$format"`
+
+while getopts "hd:" option; do
+	case $option in
+		h)
+			usage
+			exit 1
+			;;
+		d)
+			timestamp=`date -d "$OPTARG" +"$format"`
+			;;
+	esac
+done
+shift $(($OPTIND - 1)) # drop option arguments
+
+filepath="$HOME/notes/log/life.log"
+
+summary="$@"
+
+{ echo "$timestamp $summary"; } >> "$filepath"
+$EDITOR "$filepath"
