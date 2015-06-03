@@ -7,14 +7,24 @@ cat << EOF
 simple plain-text life logger
 
 Usage:
-  $ l [<summary>]
+  $ l [options] [<summary>]
+
+Options:
+  -h
+    display this help message
+  -d <date>
+    use given date instead of today
+  -n
+    do not append timestamp
 EOF
 }
 
+filepath="$HOME/notes/log/life.log"
 format="%F (%a)"
 timestamp=`date +"$format"`
+append_timestamp=true
 
-while getopts "hd:" option; do
+while getopts "hd:n" option; do
 	case $option in
 		h)
 			usage
@@ -23,13 +33,21 @@ while getopts "hd:" option; do
 		d)
 			timestamp=`date -d "$OPTARG" +"$format"`
 			;;
+		n)
+			append_timestamp=false
+			;;
 	esac
 done
 shift $(($OPTIND - 1)) # drop option arguments
 
-filepath="$HOME/notes/log/life.log"
-
 summary="$@"
 
-{ echo "$timestamp $summary"; } >> "$filepath"
+if [ "$summary" = "-" ]; then # alias for `-n`; convenience hack
+	append_timestamp=false
+fi
+
+if [ $append_timestamp = true ]; then
+	{ echo "$timestamp $summary"; } >> "$filepath"
+fi
+
 $EDITOR "$filepath"
