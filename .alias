@@ -11,11 +11,9 @@ alias away="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 alias trash="mv -t /tmp/trash"
 alias dirf="find . | sed -e 's/[^-][^\/]*\//  |/g' -e 's/|\([^ ]\)/|-\1/'"
 
+alias vi="vim -p"
 alias t="todo.sh"
 alias tt="clear; todo.sh listpri"
 alias vocab="r -f vocab -n"
 alias word="~/Scripts/randict.sh"
 alias trans="~/Scripts/translation.sh"
-
-alias venv="virtualenv venv --distribute; ln -s venv/bin/activate"
-alias be="bundle exec"

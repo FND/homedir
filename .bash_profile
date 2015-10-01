@@ -7,10 +7,11 @@ fi
 mkdir -p /tmp/trash
 mkdir -p /tmp/dev
 
-# Python shell settings
-export PYTHONSTARTUP="$HOME/.pythonrc.py"
+# locale settings
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-# basic settings
+# history settings
 HISTSIZE=1000
 HISTFILESIZE=2000
 HISTCONTROL=ignoredups:ignorespace
@@ -23,9 +24,12 @@ shopt -s histappend
 # of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# set environment variables
+# use vi as default editor and shell editing mode
 export EDITOR="vim"
 set -o vi
+
+# Python shell settings
+export PYTHONSTARTUP="$HOME/.pythonrc.py"
 
 # custom shell prompt
 #PS1='${debian_chroot:+($debian_chroot)}\w$ '
