@@ -8,6 +8,7 @@ Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Gundo'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 
 set nobackup
@@ -56,6 +57,11 @@ set listchars=tab:⋯\ ,trail:·
 set colorcolumn=+1 " requires Vim 7.3
 highlight ColorColumn ctermbg=DarkGray guibg=DarkGray
 
+" syntax checking
+let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_mode_map = { "mode": "passive" }
+highlight SignColumn ctermbg=Black
+
 " retrieve remote files' source (rather than rendered markup)
 " (cf. http://vimperator.org/trac/ticket/25)
 let g:netrw_http_cmd = "wget -q -O"
@@ -76,7 +82,7 @@ command Lde set spell | set spelllang=de |
 	\iabbrev ae ä| iabbrev oe ö| iabbrev ue ü|
 	\iabbrev sz ß
 command Qnoise set nospell wrap | match
-command Lint exec "write | make | cope"
+command Lint exec "write | SyntasticCheck"
 command Clip call CopyToClipboard()
 command -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
 command -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
