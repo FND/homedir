@@ -1,0 +1,4 @@
+cp ~/Dev/templates/testcase.html /tmp/dev/ #testcase
+python -m SimpleHTTPServer & echo "→ http://localhost:8000" #http
+touch /tmp/irssi2iterm; tail -f /tmp/irssi2iterm & caffeinate -i irssi #irssi
+cd ~/Dev/web/tash/; vi index.html #tash
