@@ -19,11 +19,27 @@ hotkey.bind({"cmd", "alt", "ctrl"}, "up", function()
 	win:setframe(frame)
 end)
 
--- move to lower right
+-- move into corner
 hotkey.bind({"cmd", "alt", "ctrl"}, "down", function()
 	local win, frame, screen = getDimensions()
-	frame.x = screen.w - frame.w
-	frame.y = screen.h - frame.h
+	local right = screen.w - frame.w
+	local bottom = screen.h - frame.h
+
+	-- cycle position
+	if frame.x == right and frame.y == bottom then
+		frame.x = right
+		frame.y = 0
+	elseif frame.x == right and frame.y < bottom then
+		frame.x = 0
+		frame.y = 0
+	elseif frame.x == 0 and frame.y < bottom then
+		frame.x = 0
+		frame.y = bottom
+	else
+		frame.x = right
+		frame.y = bottom
+	end
+
 	win:setframe(frame)
 end)
 
