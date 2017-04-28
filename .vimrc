@@ -166,3 +166,10 @@ fun! CenterMe()
 	let @v = v_save
 	let &virtualedit = ve_save
 endf
+
+function! ComponentLayout(directory)
+	exec 'tabnew ' . a:directory . '/element.js'
+	exec 'vsplit ' . a:directory . '/template.jsx'
+	exec 'split ' . a:directory . '/index.js'
+	vertical resize -10
+endfunction
