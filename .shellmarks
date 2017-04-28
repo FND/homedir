@@ -1,4 +1,5 @@
 cp ~/Dev/templates/testcase.html /tmp/dev/ #testcase
 python -m SimpleHTTPServer & echo "→ http://localhost:8000" #http
+git stash && git pull --rebase && git stash pop #repush
 touch /tmp/irssi2iterm; tail -f /tmp/irssi2iterm & caffeinate -i irssi #irssi
 cd ~/Dev/web/tash/; vi index.html #tash

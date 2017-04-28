@@ -43,6 +43,8 @@ if has("gui_running")
 	colorscheme solarized
 	set background=dark
 endif
+" distinguish search highlighting from markers like "TODO","XXX" etc.
+highlight Search cterm=bold ctermfg=gray ctermbg=blue
 " custom status line
 set laststatus=2
 set statusline=%f%m%r%h%w " file name and flags

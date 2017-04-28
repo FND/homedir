@@ -7,7 +7,7 @@ command jstoggle :set! javascript.enabled!=true
 
 " options
 set hlsearch
-set complete=sfl
+set complete=l
 set editor="/Users/fnd/bin/mvim"
 set toolbars=nonavigation
 
