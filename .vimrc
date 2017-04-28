@@ -8,8 +8,14 @@ Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Gundo'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'vimwiki/vimwiki'
 call vundle#end()
+
+" Vimwiki configuration
+let g:vimwiki_list = [{
+		\ 'path': '~/Documents/vwiki/',
+		\ 'syntax': 'markdown',
+		\ 'ext': '.md'}]
 
 set nobackup
 set directory=/tmp/
