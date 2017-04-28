@@ -39,7 +39,6 @@ while getopts "hd:n" option; do
 	esac
 done
 shift $(($OPTIND - 1)) # drop option arguments
-
 summary="$@"
 
 if [ "$summary" = "-" ]; then # alias for `-n`; convenience hack

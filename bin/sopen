@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+set -e
+
+usage() {
+cat << EOF
+simple encrypted file vault
+
+CAUTION: There are no security guarantees here.
+
+Usage:
+  $ sopen [options] <filepath>
+
+extracts and opens the specified encrypted 7-Zip archive, removing contents
+again after the editor is closed
+
+Options:
+  -h
+    display this help message
+  -a <filepath>
+    add given file to the archive, removing that file from disk
+
+creating the initial archive:
+
+    $ cd /path/to/secrets
+    $ 7z a -mhe=on -p archive.7z .
+
+manually extracting that archive:
+
+    $ 7z x -o/path/to/target archive.7z
+EOF
+	exit 1
+}
+
+while getopts "ha:" option; do
+	case $option in
+		h)
+			usage
+			;;
+		a)
+			filepath=`realpath "$OPTARG"`
+			add_mode=true
+			if [ ! -f "$filepath" ]; then
+				echo "ERROR: '$filepath' does not exist"
+				exit 1
+			fi
+			;;
+	esac
+done
+shift $(($OPTIND - 1)) # drop option arguments
+
+archive_path="$1"
+if [ -z "$archive_path" ]; then
+	usage
+fi
+archive_path=`realpath "$archive_path"`
+
+# create temporary directory (removed automatically on exit)
+tmpdir=`mktemp -d`
+trap "{ rm -rf "$tmpdir"; }" EXIT
+
+# extract archive
+7z x -o"$tmpdir" "$archive_path"
+
+# add file to archive
+if [ "$add_mode" = true ]; then
+	echo "WARNING: destructive operation"
+	echo "this will _move_ '$filepath' into the encrypted archive"
+	read -n1 -p "enter 'y' to continue" confirmation
+	if [ "$confirmation" = "y" ]; then
+		cp "$filepath" "$tmpdir/"
+
+		# avoid additional subdirectory
+		cd "$tmpdir"
+		7z a -mhe=on -p updated.7z .
+		cd -
+		mv -i "$tmpdir/updated.7z" "$archive_path"
+
+		rm "$filepath"
+	else
+		echo "aborted"
+		exit 1
+	fi
+fi
+
+# inspect archive
+$EDITOR "$tmpdir"
