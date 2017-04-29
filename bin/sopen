@@ -33,7 +33,7 @@ EOF
 }
 
 mode="read"
-while getopts "ha:" option; do
+while getopts ":ha:" option; do
 	case $option in
 		h)
 			usage
@@ -46,6 +46,10 @@ while getopts "ha:" option; do
 				echo "ERROR: '$filepath' does not exist"
 				exit 1
 			fi
+			;;
+		\?)
+			echo "ERROR: invalid option '-$OPTARG'"
+			exit 1
 			;;
 	esac
 done
@@ -67,7 +71,8 @@ trap "{ rm -rf "$tmpdir"; }" EXIT
 
 # add file to archive
 if [ "$mode" = "append" ]; then
-	echo "WARNING: destructive operation"
+	echo
+	echo "⚠️ WARNING: destructive operation"
 	echo "this will _move_ '$filepath' into the encrypted archive"
 	read -n1 -p "enter 'y' to continue" confirmation
 	if [ "$confirmation" = "y" ]; then
@@ -81,6 +86,7 @@ if [ "$mode" = "append" ]; then
 
 		rm "$filepath"
 	else
+		echo
 		echo "aborted"
 		exit 1
 	fi
