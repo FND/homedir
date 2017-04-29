@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
+set -u
 
 usage() {
 cat << EOF
@@ -31,6 +32,7 @@ manually extracting that archive:
 EOF
 }
 
+mode="read"
 while getopts "ha:" option; do
 	case $option in
 		h)
@@ -39,7 +41,7 @@ while getopts "ha:" option; do
 			;;
 		a)
 			filepath=`realpath "$OPTARG"`
-			add_mode=true
+			mode="append"
 			if [ ! -f "$filepath" ]; then
 				echo "ERROR: '$filepath' does not exist"
 				exit 1
@@ -64,7 +66,7 @@ trap "{ rm -rf "$tmpdir"; }" EXIT
 7z x -o"$tmpdir" "$archive_path"
 
 # add file to archive
-if [ "$add_mode" = true ]; then
+if [ "$mode" = "append" ]; then
 	echo "WARNING: destructive operation"
 	echo "this will _move_ '$filepath' into the encrypted archive"
 	read -n1 -p "enter 'y' to continue" confirmation
