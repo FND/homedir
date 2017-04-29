@@ -29,13 +29,13 @@ manually extracting that archive:
 
     $ 7z x -o/path/to/target archive.7z
 EOF
-	exit 1
 }
 
 while getopts "ha:" option; do
 	case $option in
 		h)
 			usage
+			exit 0
 			;;
 		a)
 			filepath=`realpath "$OPTARG"`
@@ -52,6 +52,7 @@ shift $(($OPTIND - 1)) # drop option arguments
 archive_path="$1"
 if [ -z "$archive_path" ]; then
 	usage
+	exit 1
 fi
 archive_path=`realpath "$archive_path"`
 
