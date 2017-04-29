@@ -33,12 +33,9 @@ EOF
 }
 
 mode="read"
+# NB: `:` prefix in front disables verbose error mode
 while getopts ":ha:" option; do
 	case $option in
-		h)
-			usage
-			exit 0
-			;;
 		a)
 			filepath=`realpath "$OPTARG"`
 			mode="append"
@@ -47,13 +44,18 @@ while getopts ":ha:" option; do
 				exit 1
 			fi
 			;;
+		h)
+			usage
+			exit 0
+			;;
 		\?)
 			echo "ERROR: invalid option '-$OPTARG'"
 			exit 1
 			;;
 	esac
 done
-shift $(($OPTIND - 1)) # drop option arguments
+# discard option arguments to handle subsequent positional arguments
+shift $(($OPTIND - 1))
 
 archive_path="$1"
 if [ -z "$archive_path" ]; then
