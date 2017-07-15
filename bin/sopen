@@ -66,7 +66,10 @@ archive_path=`realpath "$archive_path"`
 
 # create temporary directory (removed automatically on exit)
 tmpdir=`mktemp -d`
-trap "{ rm -rf "$tmpdir"; }" EXIT
+function cleanup {
+	rm -rf "$tmpdir"
+}
+trap cleanup EXIT
 
 # extract archive
 7z x -o"$tmpdir" "$archive_path"
