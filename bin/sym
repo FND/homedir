@@ -29,6 +29,9 @@ case $symbol in
 	mdash)
 		emit "—"
 		;;
+	ndash)
+		emit "–"
+		;;
 	deg)
 		emit "°"
 		;;
