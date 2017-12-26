@@ -4,9 +4,10 @@ alias mv="mv -i"
 alias less="less -R"
 alias grep="grep --color=auto"
 alias cgrep="grep --color=always"
+alias clip="vipe | pbcopy"
 alias wdclip="pwd | pbcopy"
 
-alias dist_upgrade="brew update && brew upgrade"
+alias dist_upgrade="brew update && brew upgrade --cleanup"
 alias away="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 alias trash="mv -t /tmp/trash"

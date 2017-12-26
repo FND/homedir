@@ -23,6 +23,9 @@ case $symbol in
 	check)
 		emit "✗"
 		;;
+	interro)
+		emit "‽"
+		;;
 	hellip)
 		emit "…"
 		;;
@@ -65,8 +68,14 @@ case $symbol in
 	mequal)
 		emit "≟"
 		;;
+	nequal)
+		emit "≠"
+		;;
 	multi)
 		emit "×"
+		;;
+	plusminus)
+		emit "±"
 		;;
 	fract)
 		emit "¼ ½ ¾"
